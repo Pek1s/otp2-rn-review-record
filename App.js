@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Test from './src/Test';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Vitun huorat se toimii!</Text>
-        <Text>Novittu toimiiko se </Text>
+        <Test />
         <Text>Shake your phone to open the developer menu.</Text>
       </View>
     );
