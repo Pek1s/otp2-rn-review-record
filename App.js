@@ -1,11 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Test from './src/Test';
+import Login from './src/Loginform';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <Login/>
         <Test />
         <Text>Shake your phone to open the developer menu.</Text>
       </View>
