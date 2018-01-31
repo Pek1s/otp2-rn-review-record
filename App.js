@@ -1,25 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Test from './src/Test';
-import Login from './src/Loginform';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import Login from './src/pages/Login';
+
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Login/>
-        <Test />
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+        <View style={styles.container}>
+          <StatusBar backgroundColor='#1c313a' barStyle="light-content"/>
+          <Login/>
+        </View>
     );
   }
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#242628',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
+    justifyContent: 'center'
+  }
 });
