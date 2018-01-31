@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, ScrollView, Text, TextInput, View, Button } from 'react-native';
+import axios from 'axios';
 
 export default class Login extends React.Component {
   constructor(props){
@@ -9,13 +10,16 @@ export default class Login extends React.Component {
   }
 
 
-  onSubmit(e) {
+  onSubmit() {
 
+    axios.post(' http://review-a-record.herokuapp.com/login',{
+      username: this.state.username,
+      password: this.state.password }
+      )
   }
   render() {
     return (
       <View >
-        <Text style={styles.title}>Login</Text>
         <TextInput
           style={styles.input}
           name='username'
@@ -31,10 +35,15 @@ export default class Login extends React.Component {
           name='password'
           placeholder='Password'
           autoCapitalize='none'
+          secureTextEntry={true}
           autoCorrect={false}
           autoFocus={true}
           value={this.state.password}
           onChangeText={(text) => this.setState({'password': text})} />
+          <Button
+            onPress={this.onSubmit}
+            title="Login"
+            />
       </View>
     );
   }
@@ -47,10 +56,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 10,
     flex: 0.2,
-    color: '#595856',
-
-  },
-  title: {
-    fontSize: 30
+    color: '#595856'
   }
 });
