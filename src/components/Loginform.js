@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, ScrollView, Text, TextInput, View, TouchableOpacity } from 'react-native';
 import axios from 'axios';
+import { store } from '../Store.js';
 
 export default class LoginForm extends React.Component {
   constructor(props){
@@ -17,7 +18,8 @@ export default class LoginForm extends React.Component {
       password: this.state.password }
       )
       .then((res) => {
-        console.log(res.data)
+        store.dispatch({type: "CHANGE_DATA", field: "jwttoken", payload: res.data.token});
+        console.log(store.getState().jwttoken)
       })
       .catch((err) => {
         alert("Wrong username or password!");
