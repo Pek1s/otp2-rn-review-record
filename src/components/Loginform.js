@@ -16,6 +16,9 @@ export default class LoginForm extends React.Component {
       username: this.state.username,
       password: this.state.password }
       )
+      .catch((err) => {
+        alert("Wrong username or password!");
+      })
   }
   render() {
     return (
