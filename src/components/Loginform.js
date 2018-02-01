@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, ScrollView, Text, TextInput, View, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 import { store } from '../Store.js';
+import { getSpotifyToken } from '../Spotify.js';
 
 export default class LoginForm extends React.Component {
   constructor(props){
@@ -10,8 +11,8 @@ export default class LoginForm extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-
   onSubmit() {
+    getSpotifyToken();
 
     axios.post(' http://review-a-record.herokuapp.com/login',{
       username: this.state.username,
@@ -24,6 +25,8 @@ export default class LoginForm extends React.Component {
       .catch((err) => {
         alert("Wrong username or password!");
       })
+
+
   }
   render() {
     return (

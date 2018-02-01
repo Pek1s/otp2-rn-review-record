@@ -5,6 +5,7 @@ const initialState = {
   albums: "",
   artistalbums: "",
   jwttoken: "",
+  spotifytoken: "",
   reviews: "",
   writereview: "",
   redirectbutton: "false",
