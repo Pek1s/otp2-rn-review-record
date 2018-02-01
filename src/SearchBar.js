@@ -7,9 +7,6 @@ export default class SearchBar extends React.Component {
     this.state = { search: ''};
   }
 
-  componentDidMount() {
-    // return fetch('https://review-a-record.herokuapp.com/')
-  }
   render() {
     return (
       <View>
