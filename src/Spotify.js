@@ -1,19 +1,31 @@
-import { AsyncStorage } from 'react-native';
+import axios from 'axios';
+import { store } from './Store.js';
 
-export function getAccessToken() {
-  fetch('https://review-a-record.herokuapp.com/spotify/access-token')
-    .then((response) => response.json())
-    .then(async (responseJSON) => {
-      try {
-        await AsyncStorage.setItem('spotifytoken', responseJSON.access_token);
-      }
-      catch(error) {
-        console.log(error);
-      }
+export function getSpotifyToken() {
+  axios.get('https://review-a-record.herokuapp.com/spotify/access-token')
+    .then((res) => {
+      store.dispatch({type: "CHANGE_DATA", field: "spotifytoken", payload: res.data.access_token});
     })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
-const checkToken = async function () {
-  const token = await AsyncStorage.getItem('spotifytoken');
-  console.log(token);
+export function searchArtist(search){
+  let url = 'https://api.spotify.com/v1/search?q=' + search + '&type=Artist&market=FI';
+  let token = localStorage.getItem("spotifytoken");
+ 
+  axios.get(url,
+    {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      }
+    })
+  .then(function(res) {
+    store.dispatch({type: "LOAD_ARTIST", field: "artists", payload: res.data.artists });
+  })
+  .catch(function(err) {
+    console.log(err);
+  })
 }
