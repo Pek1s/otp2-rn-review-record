@@ -1,9 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import Logo from '../components/Logo';
 import LoginForm from '../components/Loginform';
 
 export default class Login extends React.Component {
+
+  signUp(){
+    Actions.register()
+  }
+
   render(){
     return(
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
@@ -11,7 +17,9 @@ export default class Login extends React.Component {
         <LoginForm/>
         <View style={styles.signupTextCont}>
           <Text style={styles.signupText}> Don´t have an account yet?</Text>
-          <Text style={styles.signupButton}> Signup</Text>
+          <TouchableOpacity onPress={this.signUp}>
+            <Text style={styles.signupText}> SignUp</Text>
+          </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
     )
@@ -21,6 +29,7 @@ export default class Login extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#242628',
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 20,
@@ -35,10 +44,6 @@ const styles = StyleSheet.create({
   },
   signupText: {
     color: 'rgba(255, 255, 255, 0.6)',
-    fontSize: 16,
-  },
-  signupButton:{
-    color: '#fff',
     fontSize: 18,
     fontWeight:'500',
   }

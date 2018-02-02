@@ -1,24 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, View, Button} from 'react-native';
+import { TextInput, View } from 'react-native';
 
-export default class Search extends React.Component {
-  render(){
+export default class SearchBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { search: ''};
+  }
+
+  componentDidMount() {
+    // return fetch('https://review-a-record.herokuapp.com/')
+  }
+  render() {
     return (
-        <View style={styles.top}>
-          <Text> kusi ja paska </Text>
-        </View>
+      <View>
+        <TextInput
+          style={{height: 40}}
+          placeholder="Search artists or albums"
+          onChangeText={(search) => this.setState({search})}
+        />
+      </View>
     );
   }
 };
-
-const styles = StyleSheet.create({
-  top: {
-    height: '10%',
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#98d2c1',
-    borderWidth: 4,
-    borderColor: '#f44242'
-  }
-});
