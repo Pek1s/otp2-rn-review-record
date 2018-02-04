@@ -13,8 +13,8 @@ export function getSpotifyToken() {
 
 export function searchArtist(search){
   let url = 'https://api.spotify.com/v1/search?q=' + search + '&type=Artist&market=FI';
-  let token = localStorage.getItem("spotifytoken");
- 
+  let token = store.getState().spotifytoken
+
   axios.get(url,
     {
       headers: {
@@ -23,7 +23,7 @@ export function searchArtist(search){
       }
     })
   .then(function(res) {
-    store.dispatch({type: "LOAD_ARTIST", field: "artists", payload: res.data.artists });
+    store.dispatch({type: "CHANGE_DATA", field: "artists", payload: res.data.artists });
   })
   .catch(function(err) {
     console.log(err);
