@@ -7,13 +7,14 @@ import { store } from '../Store.js';
 export default class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { search: ''};
+    this.state = { search: '', loaded: false};
     this.onSubmit = this.onSubmit.bind(this);
   }
 
   onSubmit(){
-    searchArtist(this.state.search);
-    searchAlbum(this.state.search);
+    searchArtist(this.state.search, () => this.setState({ loaded: true}));
+    searchAlbum(this.state.search, () => this.setState({ loaded: true}));
+    
   }
 
   render() {

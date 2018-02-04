@@ -11,7 +11,7 @@ export function getSpotifyToken() {
     });
 }
 
-export function searchArtist(search){
+export function searchArtist(search, cb){
   let url = 'https://api.spotify.com/v1/search?q=' + search + '&type=Artist&market=FI';
   let token = store.getState().spotifytoken
 
@@ -24,13 +24,14 @@ export function searchArtist(search){
     })
   .then(function(res) {
     store.dispatch({type: "CHANGE_DATA", field: "artists", payload: res.data.artists });
+    cb();
   })
   .catch(function(err) {
     console.log(err);
   })
 }
 
-export function searchAlbum(search){
+export function searchAlbum(search, cb){
   let url = 'https://api.spotify.com/v1/search?q=' + search + '&type=Album&market=FI';
   let token = store.getState().spotifytoken
 
@@ -43,6 +44,7 @@ export function searchAlbum(search){
   })
   .then(function(res) {  
     store.dispatch({type: "CHANGE_DATA", field: "albums", payload: res.data.albums });
+    cb();
   })
   .catch(function(err) {
     console.log(err);
