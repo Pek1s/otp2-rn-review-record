@@ -6,26 +6,31 @@ export default class SearchResult extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      artists: []
+      artists: [],
+      albums: []
     }
   }
 
   componentDidMount(){
     this.setState({
-      artists: store.getState().artists.items
+      artists: store.getState().artists.items,
+      albums: store.getState().albums.items
     })
   }
   render() {
     return (
       <View>
-      { this.state.artists.length > 3 &&
       <FlatList
         data={ this.state.artists }
         renderItem={({item}) => <Text>{item.name}</Text>}
         keyExtractor={item => item.id}    
       />
-    }
+      <FlatList
+        data={ this.state.albums }
+        renderItem={({item}) => <Text>{item.name}</Text>}
+        keyExtractor={item => item.id}    
+      />
       </View>
-      )
-    }
+    )
+  }
 }
