@@ -5,30 +5,23 @@ import { store } from '../Store.js';
 export default class SearchResult extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      artists: [],
-      albums: []
-    }
   }
 
   componentDidMount(){
-    this.setState({
-      artists: store.getState().artists.items,
-      albums: store.getState().albums.items
-    })
+    store.getState();
   }
   render() {
     return (
       <View>
       <FlatList
-        data={ this.state.artists }
+        data={ store.getState().artists.items }
         renderItem={({item}) => <Text>{item.name}</Text>}
-        keyExtractor={item => item.id}    
+        keyExtractor={item => item.id}
       />
       <FlatList
-        data={ this.state.albums }
+        data={ store.getState().albums.items }
         renderItem={({item}) => <Text>{item.name}</Text>}
-        keyExtractor={item => item.id}    
+        keyExtractor={item => item.id}
       />
       </View>
     )
