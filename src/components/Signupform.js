@@ -11,7 +11,7 @@ export default class Signupform extends React.Component {
   }
 
   onSubmit() {
-    axios.post(' http://review-a-record.herokuapp.com/users/create-users',{
+    axios.post('http://review-a-record.herokuapp.com/users/create-user',{
       username: this.state.username,
       name: this.state.name,
       lastname: this.state.lastname,
@@ -23,6 +23,7 @@ export default class Signupform extends React.Component {
         console.log(store.getState().jwttoken)
       })
       .catch((err) => {
+        console.log(err.message);
         alert("Please check your input");
       })
   }
