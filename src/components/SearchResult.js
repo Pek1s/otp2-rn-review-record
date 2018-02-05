@@ -7,9 +7,6 @@ export default class SearchResult extends React.Component {
     super(props);
   }
 
-  componentDidMount(){
-    store.getState();
-  }
   render() {
     return (
       <View>
