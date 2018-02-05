@@ -3,8 +3,9 @@ import { TextInput, Text, View, TouchableOpacity, StyleSheet } from 'react-nativ
 import { searchArtist, searchAlbum } from '../Spotify';
 import SearchResult from '../components/SearchResult';
 import { store } from '../Store.js';
+import { connect } from 'redux';
 
-export default class SearchBar extends React.Component {
+class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = { search: '', loaded: false};
@@ -18,6 +19,7 @@ export default class SearchBar extends React.Component {
   }
 
   render() {
+    store.subscribe(() => this.setState(this.state));
     return (
       <View>
         <TextInput
@@ -50,3 +52,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   }
 });
+
+export default SearchBar;
