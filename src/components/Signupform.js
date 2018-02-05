@@ -50,6 +50,7 @@ export default class Signupform extends React.Component {
           secureTextEntry={false}
           autoCorrect={false}
           autoFocus={false}
+          keyboardType='email-address'
           value={this.state.name}
           onChangeText={(text) => this.setState({'name': text})} />
         <TextInput
@@ -61,6 +62,7 @@ export default class Signupform extends React.Component {
           secureTextEntry={false}
           autoCorrect={false}
           autoFocus={false}
+          keyboardType='email-address'
           value={this.state.lastname}
           onChangeText={(text) => this.setState({'lastname': text})} />
         <TextInput
@@ -72,6 +74,7 @@ export default class Signupform extends React.Component {
           secureTextEntry={false}
           autoCorrect={false}
           autoFocus={false}
+          keyboardType='email-address'
           value={this.state.email}
           onChangeText={(text) => this.setState({'email': text})} />
         <TextInput
@@ -98,7 +101,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 30,
+    paddingTop: 40,
   },
   inputBox: {
     backgroundColor: '#3f423f',
