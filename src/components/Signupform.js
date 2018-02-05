@@ -11,9 +11,9 @@ export default class Signupform extends React.Component {
   }
 
   onSubmit() {
-    axios.post('http://review-a-record.herokuapp.com/users/create-user',{
+    axios.post('https://review-a-record.herokuapp.com/users/create-user',{
       username: this.state.username,
-      name: this.state.name,
+      firstname: this.state.name,
       lastname: this.state.lastname,
       email: this.state.email,
       password: this.state.password}
