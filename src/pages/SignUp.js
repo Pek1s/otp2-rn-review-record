@@ -4,11 +4,13 @@ import { Actions } from 'react-native-router-flux';
 import Logo from '../components/Logo';
 import LoginForm from '../components/Loginform';
 
+
 export default class Login extends React.Component {
 
   logIn(){
     Actions.login()
   }
+
 
   render(){
     return(

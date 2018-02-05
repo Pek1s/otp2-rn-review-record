@@ -6,6 +6,9 @@ import LoginForm from '../components/Loginform';
 import { getSpotifyToken } from '../Spotify.js';
 
 export default class Login extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   componentDidMount(){
     getSpotifyToken();
@@ -32,7 +35,6 @@ export default class Login extends React.Component {
           <TouchableOpacity onPress={this.signUp}>
             <Text style={styles.signupText}> SignUp</Text>
           </TouchableOpacity>
-
         </View>
       </KeyboardAvoidingView>
     )
