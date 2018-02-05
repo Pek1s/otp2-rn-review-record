@@ -1,22 +1,21 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar, KeyboardAvoidingView, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, StatusBar, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Logo from '../components/Logo';
-import LoginForm from '../components/Loginform';
+import Signupform from '../components/Signupform';
 
 
-export default class Login extends React.Component {
+export default class SignUp extends React.Component {
 
   logIn(){
     Actions.login()
   }
 
-
   render(){
     return(
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <Logo/>
-        <LoginForm/>
+        <Signupform/>
         <View style={styles.signupTextCont}>
           <Text style={styles.signInText}> Have an existing account?</Text>
           <TouchableOpacity onPress={this.logIn}>

@@ -1,12 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import HideWithKeyboard from 'react-native-hide-with-keyboard';
 
 export default class Logo extends React.Component {
   render(){
     return(
       <View style={styles.container}>
-        <Image style={styles.image} source={require('../images/Logo.png')}/>
-        <Text style={styles.logotext}>Welcome to Review App</Text>
+        <HideWithKeyboard>
+          <Image style={styles.image} source={require('../images/Logo.png')}/>
+        </HideWithKeyboard>
+        <HideWithKeyboard>
+          <Text style={styles.logotext}>Welcome to Review App</Text>
+        </HideWithKeyboard>
       </View>
     )
   }

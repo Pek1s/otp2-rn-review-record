@@ -14,7 +14,7 @@ export default class SearchBar extends React.Component {
   onSubmit(){
     searchArtist(this.state.search, () => this.setState({ loaded: true}));
     searchAlbum(this.state.search, () => this.setState({ loaded: true}));
-    
+
   }
 
   render() {
@@ -28,7 +28,7 @@ export default class SearchBar extends React.Component {
         <TouchableOpacity style={styles.Button} onPress={this.onSubmit}>
           <Text style={styles.buttonText}>Search</Text>
         </TouchableOpacity>
-      { store.getState().artists.items && <SearchResult /> } 
+      { store.getState().artists.items && <SearchResult /> }
       </View>
     );
   }

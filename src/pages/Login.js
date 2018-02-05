@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, StatusBar, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Logo from '../components/Logo';
-import LoginForm from '../components/Loginform';
+import Loginform from '../components/Loginform';
 import { getSpotifyToken } from '../Spotify.js';
 
 export default class Login extends React.Component {
@@ -26,7 +26,7 @@ export default class Login extends React.Component {
     return(
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <Logo/>
-        <LoginForm/>
+        <Loginform/>
         <TouchableOpacity onPress={this.search}>
             <Text style={styles.signupText}> Try Search</Text>
         </TouchableOpacity>

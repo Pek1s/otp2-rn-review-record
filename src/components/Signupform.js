@@ -3,24 +3,27 @@ import { StyleSheet, ScrollView, Text, TextInput, View, TouchableOpacity } from 
 import axios from 'axios';
 import { store } from '../Store.js';
 
-export default class Loginform extends React.Component {
+export default class Signupform extends React.Component {
   constructor(props){
     super(props);
-    this.state = {username: "", password: ""};
+    this.state = {username: "", name: "", lastname: "", email: "", password: "" };
     this.onSubmit = this.onSubmit.bind(this);
   }
 
   onSubmit() {
-    axios.post(' http://review-a-record.herokuapp.com/login',{
+    axios.post(' http://review-a-record.herokuapp.com/users/create-users',{
       username: this.state.username,
-      password: this.state.password }
+      name: this.state.name,
+      lastname: this.state.lastname,
+      email: this.state.email,
+      password: this.state.password}
       )
       .then((res) => {
         store.dispatch({type: "CHANGE_DATA", field: "jwttoken", payload: res.data.token});
         console.log(store.getState().jwttoken)
       })
       .catch((err) => {
-        alert("Wrong username or password!");
+        alert("Please check your input");
       })
   }
 
@@ -41,6 +44,39 @@ export default class Loginform extends React.Component {
         <TextInput
           style={styles.inputBox}
           underlineColorAndroid='rgba(0, 0, 0, 0)'
+          name='name'
+          placeholder='First name'
+          autoCapitalize='words'
+          secureTextEntry={false}
+          autoCorrect={false}
+          autoFocus={false}
+          value={this.state.name}
+          onChangeText={(text) => this.setState({'name': text})} />
+        <TextInput
+          style={styles.inputBox}
+          underlineColorAndroid='rgba(0, 0, 0, 0)'
+          name='lastname'
+          placeholder='Last name'
+          autoCapitalize='words'
+          secureTextEntry={false}
+          autoCorrect={false}
+          autoFocus={false}
+          value={this.state.lastname}
+          onChangeText={(text) => this.setState({'lastname': text})} />
+        <TextInput
+          style={styles.inputBox}
+          underlineColorAndroid='rgba(0, 0, 0, 0)'
+          name='email'
+          placeholder='Email'
+          autoCapitalize='none'
+          secureTextEntry={false}
+          autoCorrect={false}
+          autoFocus={false}
+          value={this.state.email}
+          onChangeText={(text) => this.setState({'email': text})} />
+        <TextInput
+          style={styles.inputBox}
+          underlineColorAndroid='rgba(0, 0, 0, 0)'
           name='password'
           placeholder='Password'
           autoCapitalize='none'
@@ -50,7 +86,7 @@ export default class Loginform extends React.Component {
           value={this.state.password}
           onChangeText={(text) => this.setState({'password': text})} />
         <TouchableOpacity style={styles.Button} onPress={this.onSubmit}>
-          <Text style={styles.buttonText}>Login</Text>
+          <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>
       </View>
     );
@@ -62,6 +98,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: 30,
   },
   inputBox: {
     backgroundColor: '#3f423f',
@@ -71,7 +108,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     borderRadius: 25,
-    marginVertical: 10,
+    marginVertical: 5,
     color: 'rgba(255, 255, 255, 0.7)',
   },
   Button: {
