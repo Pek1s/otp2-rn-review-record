@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View, Image } from 'react-native';
 import { store } from '../Store.js';
 
 export default class SearchResult extends React.Component {
@@ -12,12 +12,27 @@ export default class SearchResult extends React.Component {
       <View>
       <FlatList
         data={ store.getState().artists.items }
-        renderItem={({item}) => <Text>{item.name}</Text>}
+        renderItem={({item}) =>
+        <View>
+          <Image
+            style={{width: 200, height: 200}}
+            source={{uri: item.images[0].url}}/>
+          <Text>{item.name}</Text>
+        </View>
+        }
+
         keyExtractor={item => item.id}
       />
       <FlatList
         data={ store.getState().albums.items }
-        renderItem={({item}) => <Text>{item.name}</Text>}
+        renderItem={({item}) =>
+        <View>
+          <Image
+            style={{width: 200, height: 200}}
+            source={{uri: item.images[0].url}}/>
+          <Text>{item.name}</Text>
+        </View>
+        }
         keyExtractor={item => item.id}
       />
       </View>
