@@ -1,6 +1,7 @@
 import React from 'react';
 import { FlatList, StyleSheet, Text, View, Image } from 'react-native';
 import { store } from '../Store.js';
+const notFoundImage = require('../images/question-mark.jpg');
 
 export default class SearchResult extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ export default class SearchResult extends React.Component {
           <View>
             <Image
               style={{width: 200, height: 200}}
-              source={item.images.length > 0  && {uri: item.images[0].url}}/>
+              source={item.images.length > 0 ? {uri: item.images[0].url} : notFoundImage}/>
             <Text>{item.name}</Text>
           </View>
         }
@@ -28,7 +29,7 @@ export default class SearchResult extends React.Component {
           <View>
             <Image
               style={{width: 200, height: 200}}
-              source={item.images.length > 0  && {uri: item.images[0].url}}/>
+              source={item.images.length > 0  ? {uri: item.images[0].url} : notFoundImage}/>
             <Text>{item.name}</Text>
           </View>
         }

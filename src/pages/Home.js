@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import SearchBar from './SearchBar';
+import SearchBar from '../components/SearchBar';
 
 class Home extends React.Component {
 

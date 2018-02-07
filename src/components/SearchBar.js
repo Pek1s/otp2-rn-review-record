@@ -13,9 +13,8 @@ class SearchBar extends React.Component {
   }
 
   onSubmit(){
-    searchArtist(this.state.search, () => this.setState({ loaded: true}));
-    searchAlbum(this.state.search, () => this.setState({ loaded: true}));
-
+    searchArtist(this.state.search);
+    searchAlbum(this.state.search);
   }
 
   componentDidMount() {
