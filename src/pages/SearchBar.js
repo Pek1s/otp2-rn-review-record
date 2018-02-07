@@ -18,8 +18,12 @@ class SearchBar extends React.Component {
 
   }
 
-  render() {
+  componentDidMount() {
     store.subscribe(() => this.setState(this.state));
+  }
+
+  render() {
+
     return (
       <View>
         <TextInput
