@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, ScrollView, Text, TextInput, View, TouchableOpacity } from 'react-native';
 import axios from 'axios';
+import { Actions } from 'react-native-router-flux';
 import { store } from '../Store.js';
 
 export default class Loginform extends React.Component {
@@ -8,6 +9,11 @@ export default class Loginform extends React.Component {
     super(props);
     this.state = {username: "", password: ""};
     this.onSubmit = this.onSubmit.bind(this);
+    this.toHome = this.toHome.bind(this);
+  }
+
+  toHome(){
+    Actions.home()
   }
 
   onSubmit() {
@@ -18,6 +24,7 @@ export default class Loginform extends React.Component {
       .then((res) => {
         store.dispatch({type: "CHANGE_DATA", field: "jwttoken", payload: res.data.token});
         console.log(store.getState().jwttoken)
+        this.toHome();
       })
       .catch((err) => {
         alert("Wrong username or password!");

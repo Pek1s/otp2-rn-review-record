@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Router, Stack, Scene} from 'react-native-router-flux';
 
+import Home from '../pages/Home';
 import Login from '../pages/Login';
 import SignUp from '../pages/SignUp';
 import SearchBar from '../pages/SearchBar';
@@ -12,7 +13,7 @@ export default class Routes extends React.Component {
           <Stack key="root" hideNavBar={true}>
             <Scene key="login" component={Login} title="Login"/>
             <Scene key="register" component={SignUp} title="Register"/>
-            <Scene key="searchbar" component={SearchBar} title="Search" />
+            <Scene key="home" component={Home} title="Search" />
           </Stack>
         </Router>
     );

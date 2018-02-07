@@ -4,10 +4,12 @@ import { Actions } from 'react-native-router-flux';
 import Logo from '../components/Logo';
 import Loginform from '../components/Loginform';
 import { getSpotifyToken } from '../Spotify.js';
+import Home from './Home';
 
 export default class Login extends React.Component {
   constructor(props) {
     super(props);
+    this.toHome = this.toHome.bind(this);
   }
 
   componentDidMount(){
@@ -18,8 +20,8 @@ export default class Login extends React.Component {
     Actions.register()
   }
 
-  search(){
-    Actions.searchbar()
+  toHome(){
+    Actions.home()
   }
 
   render(){
@@ -27,7 +29,7 @@ export default class Login extends React.Component {
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <Logo/>
         <Loginform/>
-        <TouchableOpacity onPress={this.search}>
+        <TouchableOpacity onPress={this.toHome}>
             <Text style={styles.signupText}> Try Search</Text>
         </TouchableOpacity>
         <View style={styles.signupTextCont}>
