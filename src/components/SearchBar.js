@@ -17,12 +17,10 @@ class SearchBar extends React.Component {
     searchAlbum(this.state.search);
   }
 
-  componentDidMount() {
-    store.subscribe(() => this.setState(this.state));
-  }
 
   render() {
-
+    store.subscribe(() => this.forceUpdate());
+    
     return (
       <View>
         <TextInput

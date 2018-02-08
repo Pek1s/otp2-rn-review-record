@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text, View, Image } from 'react-native';
+import { FlatList, StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import { store } from '../Store.js';
 const notFoundImage = require('../images/question-mark.jpg');
 
@@ -9,33 +9,39 @@ export default class SearchResult extends React.Component {
   }
 
   render() {
+    
     return (
+
       <View>
-      <FlatList
-        data={ store.getState().artists.items }
-        renderItem={({item}) =>
+        <ScrollView>
           <View>
-            <Image
+          {store.getState().artists.items.map( x => 
+            <View key={x}>
+              <Image
               style={{width: 200, height: 200}}
-              source={item.images.length > 0 ? {uri: item.images[0].url} : notFoundImage}/>
-            <Text>{item.name}</Text>
-          </View>
-        }
-        keyExtractor={item => item.id}
-      />
-      <FlatList
-        data={ store.getState().albums.items }
-        renderItem={({item}) =>
+              source={x.images.length > 0 ? {uri: x.images[0].url} : notFoundImage}/>
+            <Text>{x.name}</Text>
+            </View>
+            )}
+         </View>
           <View>
-            <Image
+          {store.getState().albums.items.map( x => 
+            <View key={x}>
+              <Image
               style={{width: 200, height: 200}}
-              source={item.images.length > 0  ? {uri: item.images[0].url} : notFoundImage}/>
-            <Text>{item.name}</Text>
+              source={x.images.length > 0 ? {uri: x.images[0].url} : notFoundImage}/>
+            <Text>{x.name}</Text>
+            </View>
+          
+            )}
           </View>
-        }
-        keyExtractor={item => item.id}
-      />
+
+        </ScrollView>
       </View>
+
+
+
+      
     )
   }
 }
