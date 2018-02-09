@@ -19,8 +19,8 @@ class SearchBar extends React.Component {
 
 
   render() {
-    store.subscribe(() => this.forceUpdate());
 
+  
     return (
       <View>
         <TextInput
