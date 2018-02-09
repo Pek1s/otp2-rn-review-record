@@ -12,7 +12,6 @@ export default class SearchResult extends React.Component {
   render() {
 
     return (
-
           <View>
           {store.getState().artists.items && store.getState().artists.items.map( x =>
             <View key={x.id}>
@@ -23,6 +22,6 @@ export default class SearchResult extends React.Component {
             </View>
             )}
          </View>
-    )
-  }
-}
+       );
+     }
+   };

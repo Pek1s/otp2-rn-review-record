@@ -21,10 +21,6 @@ export default class SearchResult extends React.Component {
           <Albumresult/>
         </ScrollView>
       </View>
-
-
-
-
     )
   }
 }

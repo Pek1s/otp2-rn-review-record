@@ -1,14 +1,13 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import SearchBar from '../components/SearchBar';
 
-class Home extends React.Component {
+export default class Home extends React.Component {
 
 
   render() {
     return (
       <View>
-        <SearchBar/>
+        <Text>Under construction</Text>
       </View>
     );
   }
@@ -17,5 +16,3 @@ class Home extends React.Component {
 const styles = StyleSheet.create({
 
 });
-
-export default Home;
