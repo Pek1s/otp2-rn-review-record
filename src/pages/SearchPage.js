@@ -2,7 +2,6 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import SearchBar from '../components/SearchBar';
 import SearchResult from '../components/SearchResult';
-
  export default class SearchPage extends React.Component {
 
 
@@ -10,7 +9,6 @@ import SearchResult from '../components/SearchResult';
     return (
       <View style={styles.container}>
         <SearchBar/>
-        <SearchResult/>
       </View>
     );
   }

@@ -15,12 +15,23 @@ export default class SearchResult extends React.Component {
 
     return (
 
-      <View>
-        <ScrollView>
+      <View style={styles.resultsContainer}>
+      <ScrollView>
           <Artistresult/>
           <Albumresult/>
-        </ScrollView>
+          </ScrollView>
       </View>
-    )
+
+    );
   }
-}
+};
+
+const styles = StyleSheet.create({
+  resultsContainer: {
+    flex: 1,
+    height: '100%',
+    backgroundColor: '#242628',
+    padding: 5,
+
+  }
+});

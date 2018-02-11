@@ -1,7 +1,7 @@
 import React from 'react';
-import { TextInput, Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+import { TextInput, Text, View, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { searchArtist, searchAlbum } from '../Spotify';
-
+import SearchResult from '../components/SearchResult';
 import { store } from '../Store.js';
 import { connect } from 'redux';
 
@@ -22,7 +22,8 @@ class SearchBar extends React.Component {
     store.subscribe(() => this.forceUpdate());
 
     return (
-      <View style={styles.Top}>
+      <View style={styles.container}>
+       <View style={styles.top}>
         <TextInput
           style={styles.inputBox}
           placeholder="Search artists or albums"
@@ -31,20 +32,24 @@ class SearchBar extends React.Component {
         <TouchableOpacity style={styles.Button} onPress={this.onSubmit}>
           <Text style={styles.buttonText}>Search</Text>
         </TouchableOpacity>
+        </View>
+        <SearchResult />
       </View>
     );
   }
 };
 
 const styles = StyleSheet.create({
-  Top: {
-    height: '12%',
+  container: {
+    flex: 1,
+  },
+  top: {
+    height: '15%',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#242628',
     flexDirection: 'row',
-    paddingHorizontal: 3,
-    paddingTop: 22,
+
   },
   inputBox: {
     backgroundColor: '#3f423f',
