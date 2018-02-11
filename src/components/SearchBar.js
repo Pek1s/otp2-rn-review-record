@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
 
 
   render() {
-    store.subscribe(() => this.forceUpdate());
+    
 
     return (
       <View style={styles.container}>
