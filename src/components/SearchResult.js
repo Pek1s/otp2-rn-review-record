@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { FlatList, StyleSheet, Text, View, Image } from 'react-native';
 import { store } from '../Store.js';
 import Albumresult from './Albumresult';
 import Artistresult from './Artistresult';
@@ -14,24 +14,16 @@ export default class SearchResult extends React.Component {
   render() {
 
     return (
-
-      <View style={styles.resultsContainer}>
-      <ScrollView>
+      <View style={styles.bottomWrapper}>
           <Artistresult/>
           <Albumresult/>
-          </ScrollView>
       </View>
-
     );
   }
 };
 
 const styles = StyleSheet.create({
-  resultsContainer: {
+  bottomWrapper: {
     flex: 1,
-    height: '100%',
-    backgroundColor: '#242628',
-    padding: 5,
-
   }
 });

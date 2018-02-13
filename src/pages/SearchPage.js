@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import SearchBar from '../components/SearchBar';
 import SearchResult from '../components/SearchResult';
 import { store } from '../Store.js';
@@ -10,7 +10,7 @@ import { store } from '../Store.js';
   render() {
     store.subscribe(() => this.forceUpdate());
     return (
-      <View style={styles.container}>
+      <View style={styles.mainContainer}>
         <SearchBar/>
       </View>
     );
@@ -18,8 +18,10 @@ import { store } from '../Store.js';
 };
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
   }
 
 });

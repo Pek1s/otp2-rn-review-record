@@ -13,11 +13,11 @@ export default class SearchResult extends React.Component {
 
     return (
 
-          <View style={styles.albumsContainer}>
+          <View style={styles.kustajapaskaa}>
           {store.getState().albums.items && store.getState().albums.items.map( x =>
-            <View key={x.id} style={styles.albumInnerItem}>
+            <View key={x.id}>
               <Image
-              style={{width: '85%', height: '85%'}}
+              style={{width: 100, height: 100}}
               source={x.images.length > 0 ? {uri: x.images[0].url} : notFoundImage}/>
             <Text style={styles.resultText}>{x.name}</Text>
             </View>
@@ -28,22 +28,7 @@ export default class SearchResult extends React.Component {
     };
 
     const styles = StyleSheet.create({
-      albumsContainer: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        padding: 5,
-        backgroundColor: '#242628',
-     },
-     albumInnerItem: {
-       width: '50%',
-       height: '50%',
-       justifyContent: 'center',
-       alignItems: 'center',
-       backgroundColor: '#242628',
-     },
-     resultText: {
-       color: 'rgba(255, 255, 255, 0.6)',
-       fontSize: 18,
-       fontWeight:'500',
-     }
+      kustajapaskaa: {
+        flex: 1,
+      }
     });
