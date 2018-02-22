@@ -1,27 +1,35 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image,  } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity  } from 'react-native';
 import { store } from '../Store.js';
+import { Actions } from 'react-native-router-flux';
 const notFoundImage = require('../images/question-mark.jpg');
 
 
 export default class SearchResult extends React.Component {
   constructor(props) {
     super(props);
+    this.toArtist = this.toArtist.bind(this);
+  }
+
+  toArtist(data) {
+    Actions.artist()
   }
 
   render() {
     return (
       <View style={styles.artistsContainer}>
         {store.getState().artists.items && store.getState().artists.items.map( x =>
-          <View key={x.id} style={styles.artistInnerItem}>
-            <View style={styles.imageContainer}>
-              <Image style={styles.artistImage}
-                source={x.images.length > 0 ? {uri: x.images[0].url} : notFoundImage}/>
+          <TouchableOpacity key={x.id} >
+            <View key={x.id} style={styles.artistInnerItem}>
+              <View style={styles.imageContainer}>
+                <Image style={styles.artistImage}
+                  source={x.images.length > 0 ? {uri: x.images[0].url} : notFoundImage}/>
+              </View>
+              <View style={styles.artistName}>
+                <Text style={styles.resultText}>{x.name}</Text>
+              </View>
             </View>
-            <View style={styles.artistName}>
-              <Text style={styles.resultText}>{x.name}</Text>
-            </View>
-          </View>
+          </TouchableOpacity>
         )}
       </View>
     );
