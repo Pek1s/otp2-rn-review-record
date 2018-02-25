@@ -20,10 +20,13 @@ export default class SearchResult extends React.Component {
     return (
       <View style={styles.artistsContainer}>
         {store.getState().artists.items && store.getState().artists.items.map( x =>
-          <TouchableOpacity key={x.id} >
+          <TouchableOpacity key={x.id} onPress={this.toArtist} >
             <View key={x.id} style={styles.artistInnerItem}>
                 <Image style={styles.images}
                 source={x.images.length > 0 ? {uri: x.images[0].url} : notFoundImage}/>
+                <View style={styles.artistName}>
+                  <Text style={styles.resultText}>{x.name}</Text>
+                </View>
             </View>
           </TouchableOpacity>
         )}
@@ -38,17 +41,29 @@ export default class SearchResult extends React.Component {
        flexDirection: 'row',
        flexWrap: 'wrap',
        justifyContent: 'center',
+       marginBottom: 20,
     },
     artistInnerItem: {
       flex: 1,
-      padding: 2,
+      padding: 5,
+      paddingBottom: 20,
       height: (Dimensions.get('window').height/3) - 12,
       width: (Dimensions.get('window').width/2) - 4,
       backgroundColor: '#242628',
+      justifyContent: 'center',
+    },
+    artistName: {
+      backgroundColor: '#242628',
+    },
+    resultText: {
+      textAlign: 'center',
+      fontWeight: '500',
+      color: 'rgba(255, 255, 255, 0.7)',
     },
     images: {
-      height: (Dimensions.get('window').height/3) - 12,
-      width: (Dimensions.get('window').width/2) - 4,
+      borderRadius: 120,
+      height: '100%',
+      width: '100%',
     },
 
    });

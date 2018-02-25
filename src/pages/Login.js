@@ -29,10 +29,10 @@ export default class Login extends React.Component {
         <Logo/>
         <Loginform/>
         <TouchableOpacity onPress={this.toSearch}>
-            <Text style={styles.signupText}> Try Search</Text>
+            <Text style={styles.generalText}> Try Search</Text>
         </TouchableOpacity>
         <View style={styles.signupTextCont}>
-          <Text style={styles.signupText}> Don´t have an account yet?</Text>
+          <Text style={styles.generalText}> Don´t have an account yet?</Text>
           <TouchableOpacity onPress={this.signUp}>
             <Text style={styles.signupText}> SignUp</Text>
           </TouchableOpacity>
@@ -58,8 +58,13 @@ const styles = StyleSheet.create({
     marginVertical: 16,
     flexDirection: 'row',
   },
-  signupText: {
+  generalText: {
     color: 'rgba(255, 255, 255, 0.6)',
+    fontSize: 18,
+    fontWeight:'500',
+  },
+  signupText: {
+    color: 'rgb(255, 255, 255)',
     fontSize: 18,
     fontWeight:'500',
   }

@@ -7,7 +7,7 @@ import ArtistView from '../components/Artistview';
 
   render() {
     return (
-      <View style={styles.mainContainer}>
+      <View style={styles.container}>
         <ArtistView/>
       </View>
     );
@@ -15,10 +15,13 @@ import ArtistView from '../components/Artistview';
 };
 
 const styles = StyleSheet.create({
-  mainContainer: {
+  container: {
     flex: 1,
-    justifyContent: 'flex-start',
+    backgroundColor: '#242628',
+    justifyContent: 'center',
     alignItems: 'center',
-  }
+    paddingTop: 20,
+    paddingBottom: 20,
+  },
 
 });
