@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { store } from '../Store.js';
 import { Actions } from 'react-native-router-flux';
 
@@ -19,25 +19,37 @@ export default class SearchResult extends React.Component {
   render() {
 
     return (
-
-          <View style={styles.kustajapaskaa}>
-          {store.getState().albums.items && store.getState().albums.items.map( x =>
-            <View key={x.id}>
-              <TouchableOpacity key={x.id} onPress={console.log("ads")}>
-              <Image
-              style={{width: 100, height: 100}}
-              source={x.images.length > 0 ? {uri: x.images[0].url} : notFoundImage}/>
-            <Text style={styles.resultText}>{x.name}</Text>
-            </TouchableOpacity>
+      <View style={styles.albumsContainer}>
+      {store.getState().albums.items && store.getState().albums.items.map( x =>
+          <TouchableOpacity key={x.id} onPress={console.log("ads")}>
+            <View key={x.id} style={styles.albumInnerItem}>
+              <Image style={styles.images}
+                source={x.images.length > 0 ? {uri: x.images[0].url} : notFoundImage}/>
             </View>
-            )}
-          </View>
-        );
-      }
-    };
+          </TouchableOpacity>
+        )}
+      </View>
+    );
+  }
+};
 
     const styles = StyleSheet.create({
-      kustajapaskaa: {
+      albumsContainer: {
         flex: 1,
-      }
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+     },
+     albumInnerItem: {
+       flex: 1,
+       padding: 2,
+       height: (Dimensions.get('window').height/3) - 12,
+       width: (Dimensions.get('window').width/2) - 4,
+       backgroundColor: '#242628',
+     },
+     images: {
+       height: (Dimensions.get('window').height/3) - 12,
+       width: (Dimensions.get('window').width/2) - 4,
+     },
+
     });

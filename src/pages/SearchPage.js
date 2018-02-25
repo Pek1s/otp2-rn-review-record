@@ -11,7 +11,7 @@ import { store } from '../Store.js';
   }
 
   render() {
-    
+
     return (
       <View style={styles.mainContainer}>
         <SearchBar/>

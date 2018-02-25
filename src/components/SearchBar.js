@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   componentsWrapper:{
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#3f423f',
+    backgroundColor: '#242628',
   },
   searchObjects: {
     flex: 1,
