@@ -9,11 +9,6 @@ const notFoundImage = require('../images/question-mark.jpg');
 export default class SearchResult extends React.Component {
   constructor(props) {
     super(props);
-    this.toArtist = this.toArtist.bind(this);
-  }
-
-  toArtist(data) {
-    Actions.artist()
   }
 
   render() {

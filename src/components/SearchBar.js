@@ -26,7 +26,7 @@ export default class SearchBar extends React.Component {
             placeholder="Search artists or albums"
             onChangeText={(search) => this.setState({search})}
           />
-          <TouchableOpacity style={styles.Button} onPress={this.onSubmit}>
+          <TouchableOpacity style={styles.Button} onPress={() => this.onSubmit()}>
             <Text style={styles.buttonText}>Search</Text>
           </TouchableOpacity>
         </View>

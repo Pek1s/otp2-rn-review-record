@@ -8,19 +8,10 @@ import { getSpotifyToken } from '../Spotify.js';
 export default class Login extends React.Component {
   constructor(props) {
     super(props);
-    this.toSearch = this.toSearch.bind(this);
   }
 
   componentDidMount(){
     getSpotifyToken();
-  }
-
-  signUp(){
-    Actions.register()
-  }
-
-  toSearch(){
-    Actions.search()
   }
 
   render(){
@@ -28,12 +19,12 @@ export default class Login extends React.Component {
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <Logo/>
         <Loginform/>
-        <TouchableOpacity onPress={this.toSearch}>
+        <TouchableOpacity onPress={() => Actions.search()}>
             <Text style={styles.generalText}> Try Search</Text>
         </TouchableOpacity>
         <View style={styles.signupTextCont}>
           <Text style={styles.generalText}> Don´t have an account yet?</Text>
-          <TouchableOpacity onPress={this.signUp}>
+          <TouchableOpacity onPress={() => Actions.register()}>
             <Text style={styles.signupText}> SignUp</Text>
           </TouchableOpacity>
         </View>

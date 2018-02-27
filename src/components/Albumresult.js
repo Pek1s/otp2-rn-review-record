@@ -21,7 +21,7 @@ export default class SearchResult extends React.Component {
     return (
       <View style={styles.albumsContainer}>
       {store.getState().albums.items && store.getState().albums.items.map( x =>
-          <TouchableOpacity key={x.id} onPress={console.log("ads")}>
+          <TouchableOpacity key={x.id} >
             <View key={x.id} style={styles.albumInnerItem}>
               <Image style={styles.images}
                 source={x.images.length > 0 ? {uri: x.images[0].url} : notFoundImage}/>
