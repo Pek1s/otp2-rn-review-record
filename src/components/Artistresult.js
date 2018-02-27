@@ -17,10 +17,18 @@ export default class SearchResult extends React.Component {
   }
 
   render() {
+    const imgUrl = (images) => {
+      if (images[0]) {
+        return images[0].url;
+      } else {
+        return 'notfound';
+      }
+    }
+
     return (
       <View style={styles.artistsContainer}>
         {store.getState().artists.items && store.getState().artists.items.map( x =>
-          <TouchableOpacity key={x.id} onPress={this.toArtist} >
+          <TouchableOpacity key={x.id} onPress={ () => Actions.artist({ spotifyid: x.id, artistName: x.name, artistImg: imgUrl(x.images) })} >
             <View key={x.id} style={styles.artistInnerItem}>
                 <Image style={styles.images}
                 source={x.images.length > 0 ? {uri: x.images[0].url} : notFoundImage}/>

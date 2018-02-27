@@ -12,19 +12,18 @@ export default class ArtistView extends React.Component {
   render() {
 
     return (
-          <View style={styles.kustajapaskaa}>
-            <Text style={styles.resultText}>{ this.props.data }</Text>
-            <Text style={styles.resultText}>{ this.props.data }</Text>
-            <Text style={styles.resultText}>{ this.props.data }</Text>
-            <Text style={styles.resultText}>{ this.props.data }</Text>
-            <Text style={styles.resultText}>{ this.props.data }</Text>
+          <View style={styles.wat}>
+          <Text style={styles.resultText}>{ this.props.spotifyid }</Text>
+          <Text style={styles.resultText}>{ this.props.artistName }</Text>
+           <Text style={styles.resultText}>{ this.props.artistImg }</Text>
+          
           </View>
         );
       }
     };
 
     const styles = StyleSheet.create({
-      kustajapaskaa: {
+      wat: {
         flex: 1,
       },
       resultText: {

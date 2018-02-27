@@ -8,7 +8,7 @@ import ArtistView from '../components/Artistview';
   render() {
     return (
       <View style={styles.container}>
-        <ArtistView/>
+        <ArtistView artistName={this.props.artistName} spotifyid={this.props.spotifyid} artistImg={this.props.artistImg} />
       </View>
     );
   }
