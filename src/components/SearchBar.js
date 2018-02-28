@@ -8,7 +8,7 @@ import { connect } from 'redux';
 export default class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { search: '', loaded: false};
+    this.state = { search: '' };
     this.onSubmit = this.onSubmit.bind(this);
   }
 
@@ -16,7 +16,6 @@ export default class SearchBar extends React.Component {
     searchArtist(this.state.search);
     searchAlbum(this.state.search);
   }
-
 
   render() {
     return (

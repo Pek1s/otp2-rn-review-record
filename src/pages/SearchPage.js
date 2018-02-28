@@ -6,10 +6,6 @@ import { store } from '../Store.js';
 
  export default class SearchPage extends React.Component {
 
-  componentWillMount() {
-    store.subscribe(() => this.forceUpdate());
-  }
-
   render() {
 
     return (
