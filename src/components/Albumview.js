@@ -15,7 +15,7 @@ export default class AlbumView extends React.Component {
           <View style={styles.wat}>
           <Text style={styles.resultText}>{ this.props.spotifyid }</Text>
           <Text style={styles.resultText}>{ this.props.albumName }</Text>
-           <Text style={styles.resultText}>{ this.props.albumImg }</Text>
+          <Text style={styles.resultText}>{ this.props.albumImg }</Text>
           </View>
         );
       }
