@@ -8,19 +8,23 @@ const notFoundImage = require('../images/question-mark.jpg');
 class Albumresult extends React.Component {
   constructor(props) {
     super(props);
-    this.toAlbum = this.toAlbum.bind(this);
   }
 
-  toAlbum(data) {
-    Actions.artist({data})
-  }
+  
 
   render() {
+    const imgUrl = (images) => {
+      if (images[0]) {
+        return images[0].url;
+      } else {
+        return 'notfound';
+      }
+    }
 
     return (
       <View style={styles.albumsContainer}>
       {this.props.albums && this.props.albums.map( x =>
-          <TouchableOpacity key={x.id} >
+          <TouchableOpacity key={x.id} onPress={ () => Actions.album({ spotifyid: x.id, albumName: x.name, albumImg: imgUrl(x.images) })} >
             <View key={x.id} style={styles.albumInnerItem}>
               <Image style={styles.images}
                 source={x.images.length > 0 ? {uri: x.images[0].url} : notFoundImage}/>
