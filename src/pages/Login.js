@@ -22,6 +22,9 @@ export default class Login extends React.Component {
         <TouchableOpacity onPress={() => Actions.search()}>
             <Text style={styles.generalText}> Try Search</Text>
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => Actions.home()}>
+        <Text style={styles.generalText}> Go Home</Text>
+        </TouchableOpacity>
         <View style={styles.signupTextCont}>
           <Text style={styles.generalText}> Don´t have an account yet?</Text>
           <TouchableOpacity onPress={() => Actions.register()}>

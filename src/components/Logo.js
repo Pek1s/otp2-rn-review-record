@@ -20,7 +20,7 @@ export default class Logo extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   logotext: {

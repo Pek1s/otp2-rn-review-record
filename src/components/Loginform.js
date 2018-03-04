@@ -9,11 +9,11 @@ export default class Loginform extends React.Component {
     super(props);
     this.state = {username: "", password: ""};
     this.onSubmit = this.onSubmit.bind(this);
-    this.toSearch = this.toSearch.bind(this);
+    this.toHome = this.toHome.bind(this);
   }
 
-  toSearch(){
-    Actions.search()
+  toHome(){
+    Actions.home()
   }
 
   onSubmit() {
@@ -24,7 +24,7 @@ export default class Loginform extends React.Component {
       .then((res) => {
         store.dispatch({type: "CHANGE_DATA", field: "jwttoken", payload: res.data.token});
         console.log(store.getState().jwttoken)
-        this.toSearch();
+        this.toHome();
       })
       .catch((err) => {
         alert("Wrong username or password!");
