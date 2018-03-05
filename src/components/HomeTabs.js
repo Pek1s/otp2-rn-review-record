@@ -16,9 +16,9 @@ render() {
             <Text style={styles.generalText}> Add Link Here  </Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.tabsItem} onPress={this.search}>
+        <TouchableOpacity style={styles.tabsItem} onPress={() => Actions.latest()}>
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Add Link Here  </Text>
+            <Text style={styles.generalText}> Latest Reviews  </Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={styles.tabsItem} onPress={this.search}>

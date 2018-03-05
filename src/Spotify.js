@@ -69,9 +69,28 @@ function getArtistAlbums(spotifyid) {
   })
 }
 
+export function getSeveralAlbums(spotifyids) {
+  let url = `https://api.spotify.com/v1/albums/?ids=${spotifyids}`
+  let token = store.getState().spotifytoken
+  axios.get(url,
+  {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    }
+  })
+  .then(function(res) {
+    store.dispatch({type: "CHANGE_DATA", field: "recentreviews", payload: res.data });
+  })
+  .catch(function(err) {
+    console.log(err);
+  })
+}
+
 module.exports = {
   getSpotifyToken,
   searchArtist,
   searchAlbum,
-  getArtistAlbums
+  getArtistAlbums,
+  getSeveralAlbums
 }
