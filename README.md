@@ -1,4 +1,4 @@
-#### React Native Record Review App
+## React Native Record Review App
 
 Record App is React Native based project in which you can listen, review and rate your favorite music from your smartphone. You are required to register as a user and start by creating your personal profile. Record App will be available to download first from Google Play and later on from Apple Store. 
 
