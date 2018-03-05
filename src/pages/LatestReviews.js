@@ -31,7 +31,7 @@ export default class LatestReviews extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView>
+        <ScrollView style={{marginTop: 20}}>
             {this.state.reviews.map(review => <ReviewBox key={review.reviewid} review={review} />)}
         </ScrollView>
       </View>

@@ -23,19 +23,12 @@ class ReviewBox extends React.Component {
         }
         return null;
     }
-    const imgUrl = (images) => {
-        if (images[0]) {
-          return images[0].url;
-        } else {
-          return notFoundImage;
-        }
-    }
-    const current = currentAlbum(this.props.review.spotify_album_id)
-    console.log()
+    const current = currentAlbum(this.props.review.spotify_album_id);
+    
     return (
        
           <View style={styles.reviewContainer}>
-          { this.props.albums && (
+          { this.props.albums && current[0] && (
           <View style={styles.albumInfo}>
             <Image source={ current[0].images.length > 0 ? {uri: current[0].images[0].url} : notFoundImage  } style={styles.images} />
             <Text style={styles.artist}>{ current[0].artists[0].name }</Text>
@@ -43,10 +36,9 @@ class ReviewBox extends React.Component {
           </View>) }
             <View style={styles.reviewBox}>
                 <Text style={styles.reviewText}>{ this.props.review.review_text }</Text>
-                <Text style={styles.reviewer}>{ this.props.review.reviewer}</Text>
+                <Text style={styles.reviewer}>{ this.props.review.username}</Text>
                 <Text style={styles.reviewer}>{ date(this.props.review.date_time)}</Text>
             </View>
-
           </View> 
         );
       }
@@ -70,6 +62,7 @@ const styles = StyleSheet.create({
   albumInfo: {
     flex: 1,
     flexWrap: 'wrap',
+    marginLeft: 5,
     justifyContent: 'flex-start',
     borderBottomRightRadius: 4,
   },
@@ -95,5 +88,6 @@ const styles = StyleSheet.create({
       justifyContent: 'flex-end',
       textAlignVertical: 'bottom',
       textAlign: 'right',
+      marginRight: 5,
   },
 });
