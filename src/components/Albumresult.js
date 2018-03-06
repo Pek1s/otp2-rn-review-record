@@ -2,7 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { store } from '../Store.js';
 import { Actions } from 'react-native-router-flux';
-import { connect } from 'react-redux'; 
+import { connect } from 'react-redux';
+import imgUrl from '../utils/imgUrl';
 const notFoundImage = require('../images/question-mark.jpg');
 
 class Albumresult extends React.Component {
@@ -10,17 +11,7 @@ class Albumresult extends React.Component {
     super(props);
   }
 
-  
-
   render() {
-    const imgUrl = (images) => {
-      if (images[0]) {
-        return images[0].url;
-      } else {
-        return 'notfound';
-      }
-    }
-
     return (
       <View style={styles.albumsContainer}>
       {this.props.albums && this.props.albums.map( x =>

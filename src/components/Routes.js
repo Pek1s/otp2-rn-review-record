@@ -7,6 +7,7 @@ import Home from '../pages/Home';
 import SearchPage from '../pages/SearchPage';
 import Artist from '../pages/Artist';
 import Album from '../pages/Album';
+import LatestReviews from '../pages/LatestReviews';
 
 
 export default class Routes extends React.Component {
@@ -20,6 +21,7 @@ export default class Routes extends React.Component {
             <Scene key="search" component={SearchPage} title="Search" hideNavBar={true} />
             <Scene key="artist" component={Artist} title="Artist" hideNavBar={true} />
             <Scene key="album" component={Album} title="Album" hideNavBar={true} />
+            <Scene key="latest" component={LatestReviews} title="Latest" hideNavBar={true} />
           </Stack>
         </Router>
     );
