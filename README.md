@@ -10,14 +10,14 @@ https://github.com/Naukkis/review-a-record
 To build this project first you have to setup React Native development environment:
 
 Required tools:
-Node
-Python2
-JDK
-Android Studio with android emulator
-Android SDK
-npm
-git
-create-react-native-app
+* Node
+* Python2
+* JDK
+* Android Studio with android emulator
+* Android SDK
+* npm
+* git
+* create-react-native-app
 
 Instructions are found in:
 https://facebook.github.io/react-native/docs/getting-started.html
@@ -25,7 +25,7 @@ https://facebook.github.io/react-native/docs/getting-started.html
 Follow instructions first from Building Projects From Native Code tab from start to finish.
 After finishing Building Projects From Native Code tab navigate to Quick Start tab and go trough steps from it.
 
-### For Developers
+### Installation
 
 Clone repo:
 
