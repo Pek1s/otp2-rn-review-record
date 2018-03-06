@@ -1,8 +1,16 @@
 import React from 'react';
 import axios from 'axios';
-import { View, StyleSheet, Text, ScrollView } from 'react-native';
+import { View, StyleSheet, Text, ScrollView,  } from 'react-native';
 import ReviewBox from '../components/ReviewBox';
 import { getSeveralAlbums } from '../Spotify';
+
+function getAlbumIDs(reviews) {
+  let idset = new Set();
+  let albumids = '';
+  reviews.forEach(x => idset.add(x.spotify_album_id));
+  idset.forEach(id => albumids += id + ',');
+  return albumids.slice(0,albumids.length - 1);
+}
 
 export default class LatestReviews extends React.Component {
   constructor(props) {
@@ -11,14 +19,6 @@ export default class LatestReviews extends React.Component {
   }
 
   componentWillMount(){
-    function getAlbumIDs(reviews) {
-        let idset = new Set();
-        let albumids = '';
-        reviews.forEach(x => idset.add(x.spotify_album_id));
-        idset.forEach(id => albumids += id + ',');
-        return albumids.slice(0,albumids.length - 1);
-       }
-
     axios.get('http://review-a-record.herokuapp.com/reviews/latest')
         .then((res) => {
             this.setState({ reviews: res.data.data });
@@ -31,7 +31,7 @@ export default class LatestReviews extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView style={{marginTop: 20}}>
+        <ScrollView style={{marginTop: 20,  marginLeft: 3 }}>
             {this.state.reviews.map(review => <ReviewBox key={review.reviewid} review={review} />)}
         </ScrollView>
       </View>

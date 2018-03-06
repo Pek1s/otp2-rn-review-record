@@ -4,6 +4,7 @@ import { store } from '../Store.js';
 import { Actions } from 'react-native-router-flux';
 import ResponsiveImage from 'react-native-responsive-image';
 import { connect } from 'react-redux';
+import imgUrl from '../utils/imgUrl';
 const notFoundImage = require('../images/question-mark.jpg');
 
 
@@ -13,14 +14,6 @@ class Artistresult extends React.Component {
   }
 
   render() {
-    const imgUrl = (images) => {
-      if (images[0]) {
-        return images[0].url;
-      } else {
-        return 'notfound';
-      }
-    }
-
     return (
       <View style={styles.artistsContainer}>
         {this.props.artists && this.props.artists.map( x =>
