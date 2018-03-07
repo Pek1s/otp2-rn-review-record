@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   },
   searchObjects: {
     flex: 1,
-    margin: 15,
+    marginHorizontal: 15,
     alignItems: 'center',
     backgroundColor: '#242628',
     flexDirection: 'row',

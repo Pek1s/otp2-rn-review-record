@@ -19,8 +19,8 @@ export default class Routes extends React.Component {
             <Scene key="register" component={SignUp} title="Register"/>
             <Scene key="home" component={Home} title="Home" hideNavBar={true} />
             <Scene key="search" component={SearchPage} title="Search" hideNavBar={true} />
-            <Scene key="artist" component={Artist} title="Artist" hideNavBar={true} />
-            <Scene key="album" component={Album} title="Album" hideNavBar={true} />
+            <Scene key="artist" component={Artist} title="Artist" hideNavBar={false} />
+            <Scene key="album" component={Album} title="Album" hideNavBar={false} />
             <Scene key="latest" component={LatestReviews} title="Latest" hideNavBar={true} />
           </Stack>
         </Router>
