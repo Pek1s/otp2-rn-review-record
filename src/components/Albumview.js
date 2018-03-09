@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, Dimensions, TouchableOpacity } from 'react-native';
 import { store } from '../Store.js';
 import { Actions } from 'react-native-router-flux';
+import Reviews from '../components/Reviews.js'
 const notFoundImage = require('../images/question-mark.jpg');
 
 
@@ -19,15 +20,12 @@ export default class AlbumView extends React.Component {
               <Image style={styles.images} source={{uri: this.props.albumImg }}/>
             </View>
             <Text style={styles.resultText}>{ this.props.albumName }</Text>
-          </View>
-
-          <View style={styles.middle}>
             <TouchableOpacity style={styles.Button} onPress={() => Actions.review()}>
               <Text style={styles.buttonText}>Leave Review</Text>
             </TouchableOpacity>
           </View>
-
           <View style={styles.bottom}>
+            <Reviews/>
           </View>
       </View>
         );
@@ -39,9 +37,9 @@ export default class AlbumView extends React.Component {
         flex: 1,
       },
       top: {
-        height: '45%',
+        flex: 2,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         backgroundColor: '#242628',
       },
       imageWrap:{
@@ -55,16 +53,9 @@ export default class AlbumView extends React.Component {
         height: '100%',
         width: '100%'
       },
-      middle: {
-        height: '10%',
-        marginTop: 20,
-        backgroundColor: '#242628',
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
       Button: {
-        width: '25%',
-        height: 40,
+        width: '80%',
+        height: '15%',
         width: 120,
         margin: 5,
         paddingTop: 5,
@@ -78,7 +69,7 @@ export default class AlbumView extends React.Component {
         textAlign: 'center',
       },
       bottom: {
-        height: '45%',
+        flex: 1,
         backgroundColor: '#242628',
       },
       resultText: {
