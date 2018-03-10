@@ -24,9 +24,6 @@ export default class AlbumView extends React.Component {
               <Text style={styles.buttonText}>Leave Review</Text>
             </TouchableOpacity>
           </View>
-          <View style={styles.bottom}>
-            <Reviews/>
-          </View>
       </View>
         );
       }

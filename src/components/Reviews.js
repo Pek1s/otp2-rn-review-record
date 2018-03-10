@@ -1,49 +1,99 @@
 import React from 'react';
-import axios from 'axios';
-import { StyleSheet, Text, View, Image, Dimensions, TouchableOpacity, ScrollView } from 'react-native';
-import { store } from '../Store.js';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { getSeveralAlbums } from '../Spotify';
+import { connect } from 'react-redux';
 import date from '../utils/formatDateAndTime';
 import imgUrl from '../utils/imgUrl';
+import notFoundImage from '../images/question-mark.jpg';
 
+class Reviews extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-export default class AlbumView extends React.Component {
-    constructor(props) {
-      super(props);
-      store.dispatch((dispatch) => {
-        axios.get('http://review-a-record.herokuapp.com/reviews/album/' + this.props.spotifyid)
-        .then((res) => {
-          dispatch({type: "CHANGE_DATA", field: "reviews", payload: res.data});
-        })
-      })
+  render() {
+    const currentAlbum = (spotifyid) => {
+      if (this.props.albums) {
+        return this.props.albums.filter(x => x.id === spotifyid);
+      }
+      return null;
     }
-
-      render() {
-        return (
-          <View style={styles.container}>
-            <ScrollView style={{marginTop: 20,  marginLeft: 3 }}>
-            {
-            store.getState().reviews.data && store.getState().reviews.data[0].spotifyid === this.props.spotifyid &&
-            <View>
-              {
-                store.getState().reviews.data.map(x =>
-                  <View key={x.reviewid}>
-                    <Text>{x.review_text}</Text>
-                    <Text>{x.username}</Text>
-                  </View>
-                )
-              }
-            </View>
-
-          }
-            </ScrollView>
-          </View>
-        )
-      }
-    };
+    const album = currentAlbum(this.props.review.spotify_album_id);
     
-    const styles = StyleSheet.create({
-      container: {
-        flex: 1,
-        backgroundColor: '#242628',
-      }
-    });
+    return (  
+      <View style={styles.reviewContainer}>
+        { this.props.albums && album[0] && (
+            <View style={styles.albumInfo}>
+            
+              <Image source={ album[0].images.length > 0 ? {uri: album[0].images[0].url} : notFoundImage  } style={styles.images} />
+              <Text style={styles.artist}>{ album[0].artists[0].name }</Text>
+              <Text style={styles.artist}>{ album[0].name }</Text>
+            </View> 
+          
+        ) }
+          <View style={styles.reviewBox}>
+            <Text style={styles.reviewText}>{ this.props.review.review_text }</Text>
+            <Text style={styles.reviewer}>{ this.props.review.username}</Text>
+            <Text style={styles.reviewer}>{ date(this.props.review.date_time)}</Text>
+          </View>
+  
+      </View> 
+        );
+  }
+};
+
+function mapStateToProps(state) {
+    return { albums: state.recentreviews.albums  }
+  };
+
+export default connect(mapStateToProps)(Reviews);
+
+const styles = StyleSheet.create({
+  reviewContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    marginTop: 10,
+    marginBottom: 20,
+    backgroundColor: '#242628',
+    maxHeight: 200,
+    justifyContent: 'space-around',
+  },
+  albumInfo: {
+    flex: 1,
+    flexWrap: 'wrap',
+    marginLeft: 5,
+    alignItems: 'center',
+    backgroundColor: '#DDDDDD',
+  },
+  images: {
+    borderRadius: 100,
+    marginRight: 5,
+    marginTop: 5,
+    width: 75,
+    height: 75,
+  },
+  artist: {
+    fontWeight: '500',
+    color: '#242628',
+  },
+  reviewBox: {
+    flex: 3,
+    flexDirection: 'column',
+    marginLeft: 5,
+    marginRight: 5,
+  },
+  reviewText: {
+    flex: 2,
+    fontWeight: '300',
+    color: 'rgba(255, 255, 255, 0.7)',
+    textAlign: 'left',
+  },
+  reviewer: {
+    fontWeight: '500',
+    color: 'rgba(255, 255, 255, 0.7)',
+    justifyContent: 'flex-end',
+    textAlignVertical: 'bottom',
+    textAlign: 'right',
+    marginRight: 5,
+  },
+});
