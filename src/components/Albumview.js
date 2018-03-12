@@ -20,8 +20,13 @@ export default class AlbumView extends React.Component {
               <Image style={styles.images} source={{uri: this.props.albumImg }}/>
             </View>
             <Text style={styles.resultText}>{ this.props.albumName }</Text>
-            <TouchableOpacity style={styles.Button} onPress={() => Actions.review()}>
-              <Text style={styles.buttonText}>Leave Review</Text>
+            <TouchableOpacity style={styles.Button} onPress={() => Actions.review({
+              spotifyid: this.props.spotifyid,
+              albumName: this.props.albumName,
+              artistname: this.props.artistname,
+              artistid: this.props.artistid
+              })}>
+              <Text style={styles.buttonText}>Review this album</Text>
             </TouchableOpacity>
           </View>
       </View>

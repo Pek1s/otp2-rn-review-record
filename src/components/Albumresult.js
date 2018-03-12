@@ -15,7 +15,12 @@ class Albumresult extends React.Component {
     return (
       <View style={styles.albumsContainer}>
       {this.props.albums && this.props.albums.map( x =>
-          <TouchableOpacity key={x.id} onPress={ () => Actions.album({ spotifyid: x.id, albumName: x.name, albumImg: imgUrl(x.images) })} >
+          <TouchableOpacity key={x.id} onPress={ () => Actions.album({ 
+            spotifyid: x.id, 
+            artistname: x.artists[0].name, 
+            artistid: x.artists[0].id, 
+            albumName: x.name, 
+            albumImg: imgUrl(x.images) })} >
             <View key={x.id} style={styles.albumInnerItem}>
               <Image style={styles.images}
                 source={x.images.length > 0 ? {uri: x.images[0].url} : notFoundImage}/>
