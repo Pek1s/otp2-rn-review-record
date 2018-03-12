@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { StyleSheet, TextInput, Text, View, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
+import { Actions } from 'react-native-router-flux';
 import {store} from '../Store.js';
 
 class Makereview extends React.Component {
@@ -15,17 +16,25 @@ class Makereview extends React.Component {
             'http://review-a-record.herokuapp.com/test-token',
             {token: this.props.jwttoken}
         ).then((res) => {
-            console.log(res.data.userid, this.props.writereview,this.props.albumname,);
             axios.post('http://review-a-record.herokuapp.com/secure/reviews/save-review',{
                 user_id: res.data.userid,
                 artist_name: this.props.artistname,
-                album_name: this.props.albumname,
-                spotify_artist_id: this.props.spotifyid,
-                spotify_album_id: this.props.albumid,
+                album_name: this.props.albumName,
+                spotify_artist_id: this.props.artistid,
+                spotify_album_id: this.props.spotifyid,
                 review_text: this.props.writereview
               },
               {headers: {token: this.props.jwttoken}}
               )
+              .then((resp) => {
+                Actions.album({
+                    spotifyid: this.props.spotifyid,
+                    artistname: this.props.artistname,
+                    artistid: this.props.artistid,
+                    albumName: this.props.albumName,
+                    albumImg: this.props.albumImg
+                })
+              })
         })
         
       }
@@ -38,6 +47,8 @@ class Makereview extends React.Component {
                     placeholder = "Write your review"
                     placeholderTextColor = "white"
                     autoCapitalize = "none"
+                    multiline = {true}
+                    numberOfLines = {20}
                     onChangeText={(text) => store.dispatch({type: "CHANGE_DATA", field: "writereview", payload: text })}
                     value={this.props.writereview}
                     editable = {true}/>
@@ -60,16 +71,12 @@ function mapStateToProps(state) {
 
 const styles = StyleSheet.create({
   textinput: {
-    flex: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    marginTop: 20,
-    borderBottomColor: '#000000',
-    borderBottomWidth: 1,
-    borderTopWidth: 1,
-    borderLeftWidth: 1,
-    borderRightWidth: 1,
+ 
+    flex: 3,
+    borderWidth: 2,
+    width: 400,
+    borderColor: 'white',
+    
     
 
  },

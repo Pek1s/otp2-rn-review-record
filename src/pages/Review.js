@@ -13,6 +13,7 @@ import Makereview from '../components/Makereview.js';
         <Makereview 
             spotifyid={this.props.spotifyid}
             albumName={this.props.albumName}
+            albumid={this.props.albumid}
             artistname={this.props.artistname}
             artistid={this.props.artistid}
         />

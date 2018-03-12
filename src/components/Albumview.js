@@ -24,7 +24,8 @@ export default class AlbumView extends React.Component {
               spotifyid: this.props.spotifyid,
               albumName: this.props.albumName,
               artistname: this.props.artistname,
-              artistid: this.props.artistid
+              artistid: this.props.artistid,
+              albumImg: this.props.albumImg
               })}>
               <Text style={styles.buttonText}>Review this album</Text>
             </TouchableOpacity>

@@ -16,8 +16,6 @@ componentWillMount(){
   axios.get(' http://review-a-record.herokuapp.com/reviews/album/' + this.props.spotifyid)
       .then((res) => {
           this.setState({ reviews: res.data.data });
-          let albumids = getAlbumIDs(res.data.data);
-          getSeveralAlbums(albumids);
       })
       .catch(error => console.log(error));
 }
@@ -26,7 +24,12 @@ render() {
   return (
     <View style={styles.container}>
       <ScrollView style={{marginTop: 20,  marginLeft: 3 }}>
-      <AlbumView  albumName={this.props.albumName} spotifyid={this.props.spotifyid} albumImg={this.props.albumImg} />
+      <AlbumView  
+        albumName={this.props.albumName} 
+        spotifyid={this.props.spotifyid} 
+        albumImg={this.props.albumImg} 
+        artistname={this.props.artistname}
+        artistid={this.props.artistid}/>
           {this.state.reviews.map(review => <Reviews key={review.reviewid} review={review} />)}
       </ScrollView>
     </View>
