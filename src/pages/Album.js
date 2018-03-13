@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { View, StyleSheet, Text, ScrollView,  } from 'react-native';
-import ReviewBox from '../components/ReviewBox';
+import Reviews from '../components/Reviews';
 import AlbumView from '../components/Albumview';
 import { getSeveralAlbums } from '../Spotify';
 
@@ -30,7 +30,7 @@ render() {
         albumImg={this.props.albumImg} 
         artistname={this.props.artistname}
         artistid={this.props.artistid}/>
-          {this.state.reviews.map(review => <ReviewBox key={review.reviewid} review={review} />)}
+          {this.state.reviews.map(review => <Reviews key={review.reviewid} review={review} />)}
       </ScrollView>
     </View>
   )

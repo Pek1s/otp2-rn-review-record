@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   albumInfo: {
-    flex: 1,
+  
     flexWrap: 'wrap',
     marginLeft: 5,
     alignItems: 'center',
@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   reviewText: {
-    flex: 2,
     fontWeight: '300',
     color: 'rgba(255, 255, 255, 0.7)',
     textAlign: 'left',
