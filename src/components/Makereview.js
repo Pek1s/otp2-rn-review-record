@@ -41,12 +41,13 @@ class Makereview extends React.Component {
 
     render(){
         return(
-            <View style={styles.textinput}>
+            <View style={{flex: 1}}>
                 <TextInput
                     underlineColorAndroid = "transparent"
                     placeholder = "Write your review"
                     placeholderTextColor = "white"
                     autoCapitalize = "none"
+                    style={styles.textinput}
                     multiline = {true}
                     numberOfLines = {20}
                     onChangeText={(text) => store.dispatch({type: "CHANGE_DATA", field: "writereview", payload: text })}
@@ -71,11 +72,16 @@ function mapStateToProps(state) {
 
 const styles = StyleSheet.create({
   textinput: {
- 
-    flex: 3,
-    borderWidth: 2,
-    width: 400,
-    borderColor: 'white',
+    
+    backgroundColor: '#3f423f',
+    width: 350,
+    height: 300,
+    paddingHorizontal: 30,
+    fontSize: 20,
+    fontWeight: 'bold',
+    borderRadius: 25,
+    marginVertical: 5,
+    color: 'rgba(255, 255, 255, 0.7)',
     
     
 
@@ -84,6 +90,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'green',
     padding: 10,
     margin: 15,
+    borderRadius: 25,
     height: 40,
  },
 });
