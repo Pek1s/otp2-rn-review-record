@@ -28,7 +28,7 @@ class ReviewBox extends React.Component {
       return null;
     }
     const album = currentAlbum(this.props.review.spotify_album_id);
-    
+    console.log( this.props.review.review_text)
     return (  
       <View style={styles.reviewContainer}>
         { this.props.albums && album[0] && (
@@ -96,7 +96,6 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   reviewText: {
-    flex: 2,
     fontWeight: '300',
     color: 'rgba(255, 255, 255, 0.7)',
     textAlign: 'left',
