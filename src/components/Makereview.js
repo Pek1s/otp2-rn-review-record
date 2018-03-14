@@ -27,6 +27,7 @@ class Makereview extends React.Component {
               {headers: {token: this.props.jwttoken}}
               )
               .then((resp) => {
+                  console.log(this.props.albumImg)
                 Actions.album({
                     spotifyid: this.props.spotifyid,
                     artistname: this.props.artistname,

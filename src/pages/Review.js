@@ -16,6 +16,7 @@ import Makereview from '../components/Makereview.js';
             albumid={this.props.albumid}
             artistname={this.props.artistname}
             artistid={this.props.artistid}
+            albumImg={this.props.albumImg}
         />
       </View>
     );
