@@ -46,3 +46,7 @@ to open in android emulator press after QR code appears:
 a
 ```
 <img src="http://users.metropolia.fi/~villenau/rn/loginpage.png"/>
+<img src="http://users.metropolia.fi/~villenau/rn/register.png"/>
+<img src="http://users.metropolia.fi/~villenau/rn/search.png"/>
+<img src="http://users.metropolia.fi/~villenau/rn/write_review.png"/>
+<img src="http://users.metropolia.fi/~villenau/rn/reviews.png"/>
