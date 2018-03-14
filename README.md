@@ -45,3 +45,4 @@ to open in android emulator press after QR code appears:
 ```
 a
 ```
+<img src="http://users.metropolia.fi/~villenau/rn/loginpage.png"/>
