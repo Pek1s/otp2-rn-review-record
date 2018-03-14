@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { StyleSheet, TextInput, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, TextInput, Text, View, TouchableOpacity, Keyboard } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import {store} from '../Store.js';
@@ -12,6 +12,7 @@ class Makereview extends React.Component {
     }
 
     onSubmit(){
+        Keyboard.dismiss();
         axios.post(
             'http://review-a-record.herokuapp.com/test-token',
             {token: this.props.jwttoken}

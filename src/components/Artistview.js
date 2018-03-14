@@ -1,16 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { store } from '../Store.js';
+import axios from 'axios';
 import AlbumView from  '../components/Albumview';
-import { getSeveralAlbums } from '../Spotify';
+import { getArtistAlbums } from '../Spotify';
 const notFoundImage = require('../images/question-mark.jpg');
 
 
 export default class ArtistView extends React.Component {
   constructor(props) {
     super(props);
+    //getArtistAlbums(this.props.spotifyid);
   }
 
+
+
+  
   render() {
 
     return (
@@ -20,7 +25,6 @@ export default class ArtistView extends React.Component {
             <View style={styles.imageWrap}>
               <Image style={styles.images} source={{uri: this.props.artistImg }}/>
             </View>
-            <Text style={styles.resultText}>{ this.props.spotifyid }</Text>
           </View>
       </View>
 

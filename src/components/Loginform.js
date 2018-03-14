@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, Text, TextInput, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, Text, TextInput, View, TouchableOpacity, Keyboard } from 'react-native';
 import axios from 'axios';
 import { Actions } from 'react-native-router-flux';
 import { store } from '../Store.js';
@@ -17,6 +17,7 @@ export default class Loginform extends React.Component {
   }
 
   onSubmit() {
+    Keyboard.dismiss()
     axios.post(' http://review-a-record.herokuapp.com/login',{
       username: this.state.username,
       password: this.state.password }

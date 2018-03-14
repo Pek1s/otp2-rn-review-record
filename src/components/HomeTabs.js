@@ -11,9 +11,9 @@ export default class HomeTabs extends React.Component {
 render() {
     return (
       <View style={styles.tabsContainer}>
-        <TouchableOpacity style={styles.tabsItem} onPress={this.search}>
+        <TouchableOpacity style={styles.tabsItem} onPress={() => Actions.search()}>
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Add Link Here  </Text>
+            <Text style={styles.generalText}> Search Album  </Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={styles.tabsItem} onPress={() => Actions.latest()}>
@@ -21,9 +21,9 @@ render() {
             <Text style={styles.generalText}> Latest Reviews  </Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.tabsItem} onPress={this.search}>
+        <TouchableOpacity style={styles.tabsItem} onPress={() => Actions.login()}>
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Add Link Here  </Text>
+            <Text style={styles.generalText}> Login page </Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={styles.tabsItem} onPress={this.search}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput, Text, View, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { TextInput, Text, View, TouchableOpacity, StyleSheet, ScrollView, Keyboard } from 'react-native';
 import { searchArtist, searchAlbum } from '../Spotify';
 import SearchResult from '../components/SearchResult';
 import { store } from '../Store.js';
@@ -13,6 +13,7 @@ export default class SearchBar extends React.Component {
   }
 
   onSubmit(){
+    Keyboard.dismiss()
     searchArtist(this.state.search);
     searchAlbum(this.state.search);
   }

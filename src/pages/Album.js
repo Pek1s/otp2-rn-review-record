@@ -30,7 +30,7 @@ render() {
         albumImg={this.props.albumImg} 
         artistname={this.props.artistname}
         artistid={this.props.artistid}/>
-          {this.state.reviews.map(review => <Reviews key={review.reviewid} review={review} />)}
+        {this.state.reviews && this.state.reviews.map(review => <Reviews key={review.reviewid} review={review} />)}
       </ScrollView>
     </View>
   )
