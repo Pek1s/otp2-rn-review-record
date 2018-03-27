@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { AppRegistry } from 'react-native'
 import { Actions } from 'react-native-router-flux';
 import { Provider } from 'react-redux';
 import { store } from './src/Store.js';
@@ -20,7 +21,7 @@ export default class App extends React.Component {
         </Provider>
     );
   }
-};
+}AppRegistry.registerComponent('sidemenu', () => App);
 
 const styles = StyleSheet.create({
   container: {
