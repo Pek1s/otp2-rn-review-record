@@ -4,14 +4,6 @@ import { Actions } from 'react-native-router-flux';
 
 export default class HomeTabs extends React.Component {
 
-  showDrawer(){
-      Actions.drawerMenu(params);
-  }
-
-  Search(){
-    Actions.search()
-  }
-
 render() {
     return (
       <View style={styles.tabsContainer}>
@@ -30,7 +22,7 @@ render() {
             <Text style={styles.generalText}> Login page </Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.tabsItem} onPress={() => Actions.showDrawer()}>
+        <TouchableOpacity style={styles.tabsItem} onPress={() => Actions.controlpanel()}>
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}> Open Menu </Text>
           </View>
