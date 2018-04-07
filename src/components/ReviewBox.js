@@ -28,7 +28,6 @@ class ReviewBox extends React.Component {
       return null;
     }
     const album = currentAlbum(this.props.review.spotify_album_id);
-    console.log( this.props.review.review_text)
     return (  
       <View style={styles.reviewContainer}>
         { this.props.albums && album[0] && (

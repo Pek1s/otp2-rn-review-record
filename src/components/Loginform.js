@@ -24,6 +24,7 @@ export default class Loginform extends React.Component {
       )
       .then((res) => {
         store.dispatch({type: "CHANGE_DATA", field: "jwttoken", payload: res.data.token});
+        store.dispatch({type: "CHANGE_DATA", field: "userid", payload: res.data.userid});
         console.log(store.getState().jwttoken)
         this.toHome();
       })

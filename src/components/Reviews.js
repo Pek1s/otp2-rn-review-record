@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Button } from 'react-native';
 import { getSeveralAlbums } from '../Spotify';
 import { connect } from 'react-redux';
 import date from '../utils/formatDateAndTime';
@@ -19,7 +19,7 @@ class Reviews extends React.Component {
       return null;
     }
     const album = currentAlbum(this.props.review.spotify_album_id);
-    
+
     return (  
       <View style={styles.reviewContainer}>
         { this.props.albums && album[0] && (
@@ -36,14 +36,22 @@ class Reviews extends React.Component {
             <Text style={styles.reviewer}>{ this.props.review.username}</Text>
             <Text style={styles.reviewer}>{ date(this.props.review.date_time)}</Text>
           </View>
-  
+          <Button
+            onPress={() => this.props.removeReview(this.props.userid, this.props.review.reviewid, this.props.jwttoken)}
+            title="Remove review"
+            color="#ff0000"
+            accessibilityLabel="Remove review"
+          />
       </View> 
         );
   }
 };
 
 function mapStateToProps(state) {
-    return { albums: state.recentreviews.albums  }
+    return { 
+      jwttoken: state.jwttoken,
+      userid: state.userid
+    }
   };
 
 export default connect(mapStateToProps)(Reviews);
