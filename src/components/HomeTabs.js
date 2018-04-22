@@ -1,58 +1,76 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Dimensions
+} from "react-native";
+import { Actions } from "react-native-router-flux";
 
 export default class HomeTabs extends React.Component {
-
-render() {
+  render() {
     return (
       <View style={styles.tabsContainer}>
-        <TouchableOpacity style={styles.tabsItem} onPress={() => Actions.search()}>
+        <TouchableOpacity
+          style={styles.tabsItem}
+          onPress={() => Actions.search()}
+        >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Search Album  </Text>
+            <Text style={styles.generalText}> Search Album </Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.tabsItem} onPress={() => Actions.latest()}>
+        <TouchableOpacity
+          style={styles.tabsItem}
+          onPress={() => Actions.latest()}
+        >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Latest Reviews  </Text>
+            <Text style={styles.generalText}> Latest Reviews </Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.tabsItem} onPress={() => Actions.login()}>
+        <TouchableOpacity
+          style={styles.tabsItem}
+          onPress={() => Actions.login()}
+        >
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}> Login page </Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.tabsItem} onPress={() => Actions.controlpanel()}>
+        <TouchableOpacity
+          style={styles.tabsItem}
+          onPress={() => Actions.controlpanel()}
+        >
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}> Open Menu </Text>
           </View>
         </TouchableOpacity>
       </View>
-    )
+    );
   }
-};
+}
 
 const styles = StyleSheet.create({
   tabsContainer: {
     flex: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
- },
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center"
+  },
   tabsItem: {
-   padding: 5,
-   height: '50%',
-   width: '50%',
- },
+    padding: 5,
+    height: "50%",
+    width: "50%"
+  },
   tabsInnerItem: {
     flex: 1,
-    backgroundColor: '#292d35',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#292d35",
+    alignItems: "center",
+    justifyContent: "center"
   },
   generalText: {
-    color: 'rgba(255, 255, 255, 0.6)',
+    color: "rgba(255, 255, 255, 0.6)",
     fontSize: 18,
-    fontWeight:'500',
+    fontWeight: "500"
   }
 });

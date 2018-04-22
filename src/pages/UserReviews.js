@@ -1,20 +1,19 @@
 import React from "react";
 import axios from "axios";
 import { View, StyleSheet, Text, ScrollView } from "react-native";
-import ReviewBox from "../components/ReviewBox";
+import { connect } from "react-redux";
 import { getSeveralAlbums } from "../Spotify";
 import { getAlbumIDs } from "../utils/albumId";
+import ReviewBox from "../components/ReviewBox";
 
-export default class LatestReviews extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { reviews: [] };
-  }
+class UserReviews extends React.Component {
+  state = { reviews: [] };
 
   componentWillMount() {
     axios
-      .get("http://review-a-record.herokuapp.com/reviews/latest")
+      .get(`http://review-a-record.herokuapp.com/reviews/${this.props.userid}`)
       .then(res => {
+        console.log(res.data);
         this.setState({ reviews: res.data.data });
         let albumids = getAlbumIDs(res.data.data);
         getSeveralAlbums(albumids);
@@ -34,6 +33,14 @@ export default class LatestReviews extends React.Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    userid: state.userid
+  };
+}
+
+export default connect(mapStateToProps)(UserReviews);
 
 const styles = StyleSheet.create({
   container: {
