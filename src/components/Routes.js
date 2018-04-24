@@ -138,6 +138,14 @@ export default class Routes extends React.Component {
             onRight={() => Actions.home()}
             rightTitle={() => {return I18n.t('routes.home')}}
           />
+          <Scene
+            key="editreview"
+            component={EditReview}
+            title="Edit Review"
+            hideNavBar={false}
+            onRight={() => Actions.home()}
+            rightTitle={"home"}
+          />
         </Scene>
       </Router>
     );
