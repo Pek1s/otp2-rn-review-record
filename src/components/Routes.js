@@ -146,6 +146,14 @@ export default class Routes extends React.Component {
             onRight={() => Actions.home()}
             rightTitle={"home"}
           />
+          <Scene
+            key="language"
+            component={LanguageSettings}
+            title="language"
+            hideNavBar={false}
+            onRight={() => Actions.home()}
+            rightTitle={"home"}
+          />
         </Scene>
       </Router>
     );
