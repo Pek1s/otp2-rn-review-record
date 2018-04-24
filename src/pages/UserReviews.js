@@ -1,10 +1,11 @@
 import React from "react";
 import axios from "axios";
-import { View, StyleSheet, Text, ScrollView } from "react-native";
+import { View, StyleSheet, Text, ScrollView, Button } from "react-native";
 import { connect } from "react-redux";
 import { getSeveralAlbums } from "../Spotify";
 import { getAlbumIDs } from "../utils/albumId";
 import ReviewBox from "../components/ReviewBox";
+import { Actions } from 'react-native-router-flux';
 
 class UserReviews extends React.Component {
   state = { reviews: [] };
@@ -13,7 +14,6 @@ class UserReviews extends React.Component {
     axios
       .get(`http://review-a-record.herokuapp.com/reviews/${this.props.userid}`)
       .then(res => {
-        console.log(res.data);
         this.setState({ reviews: res.data.data });
         let albumids = getAlbumIDs(res.data.data);
         getSeveralAlbums(albumids);
@@ -26,7 +26,15 @@ class UserReviews extends React.Component {
       <View style={styles.container}>
         <ScrollView style={{ marginTop: 20, marginLeft: 3 }}>
           {this.state.reviews.map(review => (
-            <ReviewBox key={review.reviewid} review={review} />
+            <View key={review.reviewid}>
+              <ReviewBox key={review.reviewid} review={review} />
+              <Button
+                onPress={() => Actions.editreview(review={review})}
+                title="Edit review"
+                color="green"
+                accessibilityLabel="Edit review"
+              />
+          </View>
           ))}
         </ScrollView>
       </View>
