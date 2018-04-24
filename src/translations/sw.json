@@ -1,3 +1,37 @@
 {
-    "hello": "hej världen detta är ett test"
+    "login": {
+        "Username": "Användarnamnet",
+        "Password": "Lösenord",
+        "Login": "Logga in",
+        "No_account": "Har inget konto än?",
+        "SignUp": " Bli medlem",
+        "AlertTitle": "Fel",
+        "AlertMessage": "Fel användarnamn eller lösenord!",
+        "Cancel": "Annullera",
+        "OK": "OK"
+    },
+    "register": {
+        "Username": "Användarnamnet",
+        "Name": "Förnamn",
+        "Fam_Name": "Efternamn",
+        "Email": "E-post",
+        "Password": "Lösenord",
+        "Register": "Registrera",
+        "Has_account": "Har du ett befintligt konto? ",
+        "LogIn": "Logga In",
+        "AlertTitle": "Fel",
+        "AlertMessage": "Kontrollera din inmatning",
+        "Cancel": "Annulera",
+        "OK": "OK"
+    },
+    "home": {
+        "Search": "Sök",
+        "LatestReviews": "Senaste recensioner",
+        "MyProfile": "Min Profil",
+        "Settings": "Inställningar"
+    },
+    "search": {
+        "Search artists or albums": "Sök artister eller album",
+        "Search": "Sök"
+    }
 }

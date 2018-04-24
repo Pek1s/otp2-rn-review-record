@@ -6,9 +6,11 @@ import {
   TextInput,
   View,
   TouchableOpacity,
-  Keyboard
+  Keyboard,
+  Alert
 } from "react-native";
 import axios from "axios";
+import I18n from '../utils/i18n';
 import { Actions } from "react-native-router-flux";
 import { store } from "../Store.js";
 
@@ -64,7 +66,15 @@ export default class Loginform extends React.Component {
         this.toHome();
       })
       .catch(err => {
-        alert("Wrong username or password!");
+        Alert.alert(
+          I18n.t('login.AlertTitle'),
+          I18n.t('login.AlertMessage'),
+          [
+            {text: I18n.t('login.Cancel')},
+            {text: I18n.t('login.OK')},
+          ],
+          { cancelable: true }
+        )
       });
   }
 
@@ -75,7 +85,7 @@ export default class Loginform extends React.Component {
           style={styles.inputBox}
           underlineColorAndroid="rgba(0, 0, 0, 0)"
           name="username"
-          placeholder="Username"
+          placeholder={I18n.t('login.Username')}
           autoCapitalize="none"
           autoCorrect={false}
           autoFocus={false}
@@ -87,7 +97,7 @@ export default class Loginform extends React.Component {
           style={styles.inputBox}
           underlineColorAndroid="rgba(0, 0, 0, 0)"
           name="password"
-          placeholder="Password"
+          placeholder={I18n.t('login.Password')}
           autoCapitalize="none"
           secureTextEntry={true}
           autoCorrect={false}
@@ -96,7 +106,7 @@ export default class Loginform extends React.Component {
           onChangeText={text => this.setState({ password: text })}
         />
         <TouchableOpacity style={styles.Button} onPress={this.onSubmit}>
-          <Text style={styles.buttonText}>Login</Text>
+          <Text style={styles.buttonText}>{I18n.t('login.Login')}</Text>
         </TouchableOpacity>
       </View>
     );

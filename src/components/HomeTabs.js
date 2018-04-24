@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Dimensions
 } from "react-native";
+import I18n from '../utils/i18n';
 import { Actions } from "react-native-router-flux";
 
 export default class HomeTabs extends React.Component {
@@ -18,7 +19,7 @@ export default class HomeTabs extends React.Component {
           onPress={() => Actions.search()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Search Album </Text>
+            <Text style={styles.generalText}>{I18n.t('home.Search')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -26,7 +27,7 @@ export default class HomeTabs extends React.Component {
           onPress={() => Actions.latest()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Latest Reviews </Text>
+            <Text style={styles.generalText}>{I18n.t('home.LatestReviews')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -34,7 +35,7 @@ export default class HomeTabs extends React.Component {
           onPress={() => Actions.login()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Login page </Text>
+            <Text style={styles.generalText}>{I18n.t('home.MyProfile')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -42,7 +43,7 @@ export default class HomeTabs extends React.Component {
           onPress={() => Actions.controlpanel()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Open Menu </Text>
+            <Text style={styles.generalText}>{I18n.t('home.Settings')}</Text>
           </View>
         </TouchableOpacity>
       </View>
