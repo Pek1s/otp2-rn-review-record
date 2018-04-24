@@ -9,8 +9,9 @@ import Album from '../pages/Album';
 import Review from '../pages/Review';
 import LatestReviews from '../pages/LatestReviews';
 import ControlPanel from '../pages/ControlPanel';
-import { Actions } from 'react-native-router-flux';
+import LanguageSettings from '../pages/LanguageSettings';
 
+import { Actions } from 'react-native-router-flux';
 
 
 export default class Routes extends React.Component {
@@ -32,6 +33,8 @@ export default class Routes extends React.Component {
             <Scene key="latest" component={LatestReviews} title="Latest" hideNavBar={true} onRight={() => Actions.home()}
             rightTitle = {"home"}  />
             <Scene key="controlpanel" component={ControlPanel} title="Latest" hideNavBar={true}  onRight={() => Actions.home()}
+            rightTitle = {"home"}  />
+            <Scene key="language" component={LanguageSettings} title="Latest" hideNavBar={false}  onRight={() => Actions.home()}
             rightTitle = {"home"}  />
           </Scene>
         </Router>
