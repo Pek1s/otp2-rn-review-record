@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet} from 'react-native';
 import Makereview from '../components/Makereview.js';
 
- export default class Artist extends React.Component {
+ export default class Review extends React.Component {
     constructor(props) {
         super(props);
       }
