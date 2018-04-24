@@ -11,6 +11,7 @@ import LatestReviews from "../pages/LatestReviews";
 import ControlPanel from "../pages/ControlPanel";
 import UserReviews from "../pages/UserReviews";
 import Profile from "../pages/Profile";
+import EditReview from "../pages/EditReview";
 import { Actions } from "react-native-router-flux";
 
 export default class Routes extends React.Component {
@@ -86,6 +87,9 @@ export default class Routes extends React.Component {
             key="profile"
             component={Profile}
             title="Profile"
+            key="editreview"
+            component={EditReview}
+            title="Edit Review"
             hideNavBar={false}
             onRight={() => Actions.home()}
             rightTitle={"home"}

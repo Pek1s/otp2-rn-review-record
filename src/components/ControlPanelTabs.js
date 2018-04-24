@@ -42,7 +42,7 @@ export default class ControlPanelTabs extends React.Component {
           onPress={() => Actions.userreview()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> User revies</Text>
+            <Text style={styles.generalText}> User reviews</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
