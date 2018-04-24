@@ -23,7 +23,7 @@ export default class ControlPanelTabs extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.latest()}
+          onPress={() => Actions.language()}
         >
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}> System Settings</Text>
@@ -47,10 +47,10 @@ export default class ControlPanelTabs extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.profile()}
+          onPress={() => Actions.controlpanel()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Profile page </Text>
+            <Text style={styles.generalText}> Some Other Settings </Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -95,14 +95,16 @@ const styles = StyleSheet.create({
     flex: 1
   },
   tabsItem: {
-    height: Dimensions.get("window").height / 12,
+    height: Dimensions.get("window").height / 8,
     width: Dimensions.get("window").width - 12,
-    padding: 4
+    padding: 4,
+    borderBottomWidth : 2,
+    borderBottomColor: '#2f3235',
   },
   tabsInnerItem: {
     height: "100%",
     width: "100%",
-    backgroundColor: "#131316",
+    backgroundColor: "transparent",
     justifyContent: "center"
   },
   generalText: {
