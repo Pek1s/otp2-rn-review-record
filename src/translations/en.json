@@ -1,3 +1,37 @@
 {
-    "hello": "hello World this is a test" 
+    "login": {
+        "Username": "Username",
+        "Password": "Password",
+        "Login": "Login",
+        "No_account": "Don´t have an account yet?",
+        "SignUp": " SingUp",
+        "AlertTitle": "Error",
+        "AlertMessage": "Wrong username or password!",
+        "Cancel": "Cancel",
+        "OK": "OK"
+    },
+    "register": {
+        "Username": "Username",
+        "Name": "First Name",
+        "Fam_Name": "Last Name",
+        "Email": "Email",
+        "Password": "Password",
+        "Register": "Register",
+        "Has_account": "Have an existing account? ",
+        "LogIn": "Log In",
+        "AlertTitle": "Error",
+        "AlertMessage": "Check your input",
+        "Cancel": "Cancel",
+        "OK": "OK"
+    },
+    "home": {
+        "Search": "Search",
+        "LatestReviews": "Latest Reviews",
+        "MyProfile": "My Profile",
+        "Settings": "Settings"
+    },
+    "search": {
+        "Search artists or albums": "Search artists or albums",
+        "Search": "Search"
+    }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, ScrollView, Text, TextInput, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, Text, TextInput, View, TouchableOpacity, Alert } from 'react-native';
 import axios from 'axios';
+import I18n from '../utils/i18n';
 import { Actions } from 'react-native-router-flux';
 import { store } from '../Store.js';
 
@@ -37,8 +38,16 @@ export default class Signupform extends React.Component {
       })
       .catch((err) => {
         console.log(err.message);
-        alert("Please check your input");
-      })
+        Alert.alert(
+          I18n.t('register.AlertTitle'),
+          I18n.t('register.AlertMessage'),
+          [
+            {text: I18n.t('register.Cancel')},
+            {text: I18n.t('register.OK')},
+          ],
+          { cancelable: true }
+        )
+      });
   }
 
   render() {
@@ -48,7 +57,7 @@ export default class Signupform extends React.Component {
           style={styles.inputBox}
           underlineColorAndroid='rgba(0, 0, 0, 0)'
           name='username'
-          placeholder='Username'
+          placeholder={I18n.t('register.Username')}
           autoCapitalize='none'
           autoCorrect={false}
           autoFocus={false}
@@ -59,7 +68,7 @@ export default class Signupform extends React.Component {
           style={styles.inputBox}
           underlineColorAndroid='rgba(0, 0, 0, 0)'
           name='name'
-          placeholder='First name'
+          placeholder={I18n.t('register.Name')}
           autoCapitalize='words'
           secureTextEntry={false}
           autoCorrect={false}
@@ -71,7 +80,7 @@ export default class Signupform extends React.Component {
           style={styles.inputBox}
           underlineColorAndroid='rgba(0, 0, 0, 0)'
           name='lastname'
-          placeholder='Last name'
+          placeholder={I18n.t('register.Fam_Name')}
           autoCapitalize='words'
           secureTextEntry={false}
           autoCorrect={false}
@@ -83,7 +92,7 @@ export default class Signupform extends React.Component {
           style={styles.inputBox}
           underlineColorAndroid='rgba(0, 0, 0, 0)'
           name='email'
-          placeholder='Email'
+          placeholder={I18n.t('register.Email')}
           autoCapitalize='none'
           secureTextEntry={false}
           autoCorrect={false}
@@ -95,7 +104,7 @@ export default class Signupform extends React.Component {
           style={styles.inputBox}
           underlineColorAndroid='rgba(0, 0, 0, 0)'
           name='password'
-          placeholder='Password'
+          placeholder={I18n.t('register.Password')}
           autoCapitalize='none'
           secureTextEntry={true}
           autoCorrect={false}
@@ -103,7 +112,7 @@ export default class Signupform extends React.Component {
           value={this.state.password}
           onChangeText={(text) => this.setState({'password': text})} />
         <TouchableOpacity style={styles.Button} onPress={this.onSubmit}>
-          <Text style={styles.buttonText}>Register</Text>
+          <Text style={styles.buttonText}>{I18n.t('register.Register')}</Text>
         </TouchableOpacity>
       </View>
     );

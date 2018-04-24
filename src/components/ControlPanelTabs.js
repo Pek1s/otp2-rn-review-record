@@ -23,7 +23,7 @@ export default class ControlPanelTabs extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.latest()}
+          onPress={() => Actions.language()}
         >
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}> System Settings</Text>

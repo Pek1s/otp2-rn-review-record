@@ -4,6 +4,7 @@ import { searchArtist, searchAlbum } from '../Spotify';
 import SearchResult from '../components/SearchResult';
 import { store } from '../Store.js';
 import { connect } from 'redux';
+import I18n from '../utils/i18n';
 
 export default class SearchBar extends React.Component {
   constructor(props) {
@@ -23,11 +24,11 @@ export default class SearchBar extends React.Component {
       <View style={styles.componentsWrapper}>
         <View style={styles.searchObjects}>
           <TextInput style={styles.inputBox}
-            placeholder="Search artists or albums"
+            placeholder={I18n.t('search.Search artists or albums')}
             onChangeText={(search) => this.setState({search})}
           />
           <TouchableOpacity style={styles.Button} onPress={() => this.onSubmit()}>
-            <Text style={styles.buttonText}>Search</Text>
+            <Text style={styles.buttonText}>{I18n.t('search.Search')}</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.resultsContainer}>

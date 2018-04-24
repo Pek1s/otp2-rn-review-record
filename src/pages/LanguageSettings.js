@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, ScrollView,TouchableOpacity,Platform} from 'react-native';
+import { View, StyleSheet, Text, ScrollView, TouchableOpacity, Platform} from 'react-native';
 import I18n from '../utils/i18n';
 
 const language = [

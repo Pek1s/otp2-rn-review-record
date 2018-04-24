@@ -4,6 +4,7 @@ import { Actions } from 'react-native-router-flux';
 import Logo from '../components/Logo';
 import Loginform from '../components/Loginform';
 import { getSpotifyToken } from '../Spotify.js';
+import I18n from '../utils/i18n';
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -26,9 +27,9 @@ export default class Login extends React.Component {
         <Text style={styles.generalText}> Go Home</Text>
         </TouchableOpacity>
         <View style={styles.signupTextCont}>
-          <Text style={styles.generalText}> Don´t have an account yet?</Text>
+          <Text style={styles.generalText}>{I18n.t('login.No_account')}</Text>
           <TouchableOpacity onPress={() => Actions.register()}>
-            <Text style={styles.signupText}> SignUp</Text>
+            <Text style={styles.signupText}>{I18n.t('login.SignUp')}</Text>
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>

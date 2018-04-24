@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, StatusBar, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Logo from '../components/Logo';
+import I18n from '../utils/i18n';
 import Signupform from '../components/Signupform';
 
 
@@ -17,9 +18,9 @@ export default class SignUp extends React.Component {
         <Logo/>
         <Signupform/>
         <View style={styles.signupTextCont}>
-          <Text style={styles.signInText}> Have an existing account?</Text>
+          <Text style={styles.generalText}>{I18n.t('register.Has_account')}</Text>
           <TouchableOpacity onPress={this.logIn}>
-            <Text style={styles.signInText}> Log In</Text>
+            <Text style={styles.signInText}>{I18n.t('register.LogIn')}</Text>
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
@@ -43,8 +44,13 @@ const styles = StyleSheet.create({
     marginVertical: 16,
     flexDirection: 'row',
   },
-  signInText: {
+  generalText: {
     color: 'rgba(255, 255, 255, 0.6)',
+    fontSize: 18,
+    fontWeight:'500',
+  },
+  signInText: {
+    color: 'rgb(255, 255, 255)',
     fontSize: 18,
     fontWeight:'500',
   }
