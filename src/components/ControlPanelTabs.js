@@ -47,10 +47,10 @@ export default class ControlPanelTabs extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.controlpanel()}
+          onPress={() => Actions.profile()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Some Other Settings </Text>
+            <Text style={styles.generalText}> Profile page </Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity

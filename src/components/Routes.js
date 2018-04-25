@@ -10,6 +10,7 @@ import Review from "../pages/Review";
 import LatestReviews from "../pages/LatestReviews";
 import ControlPanel from "../pages/ControlPanel";
 import UserReviews from "../pages/UserReviews";
+import Profile from "../pages/Profile";
 import { Actions } from "react-native-router-flux";
 
 export default class Routes extends React.Component {
@@ -77,6 +78,14 @@ export default class Routes extends React.Component {
             key="userreview"
             component={UserReviews}
             title="UserReviews"
+            hideNavBar={false}
+            onRight={() => Actions.home()}
+            rightTitle={"home"}
+          />
+          <Scene
+            key="profile"
+            component={Profile}
+            title="Profile"
             hideNavBar={false}
             onRight={() => Actions.home()}
             rightTitle={"home"}

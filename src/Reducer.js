@@ -12,7 +12,8 @@ const initialState = {
   redirectbutton: "false",
   recentreviews: "",
   loggedIn: "false",
-  isAdmin: "false"
+  isAdmin: "false",
+  user: ""
 };
 
 const reducer = (state = initialState, action) => {

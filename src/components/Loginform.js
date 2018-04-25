@@ -32,6 +32,11 @@ export default class Loginform extends React.Component {
         password: this.state.password
       })
       .then(res => {
+        store.dispatch({
+          type: "CHANGE_DATA",
+          field: "user",
+          payload: this.state.username
+        });
         axios
           .get(
             `http://review-a-record.herokuapp.com/admin-status/${
