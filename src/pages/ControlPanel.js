@@ -9,7 +9,7 @@ export default class ControlPanel extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-      <ControlPanelTabs/>
+        <ControlPanelTabs/>
       </View>
     )
   }
