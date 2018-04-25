@@ -20,10 +20,6 @@ export default class LanguageSettings extends React.Component {
         }
         this.onLanguage=this.onLanguage.bind(this);
     }
-
-    componentWillMount(){
-
-    }
     onSelectLanguage() {
         return(
             language.map((data, i)=>{

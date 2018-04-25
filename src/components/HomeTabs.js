@@ -40,7 +40,7 @@ export default class HomeTabs extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.controlpanel()}
+          onPress={() => Actions.settings()}
         >
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}>{I18n.t('home.Settings')}</Text>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import HideWithKeyboard from 'react-native-hide-with-keyboard';
+import I18n from '../utils/i18n';
 
 export default class Logo extends React.Component {
   render(){
@@ -10,7 +11,7 @@ export default class Logo extends React.Component {
           <Image style={styles.image} source={require('../images/Logo.png')}/>
         </HideWithKeyboard>
         <HideWithKeyboard>
-          <Text style={styles.logotext}>Welcome to Review App</Text>
+          <Text style={styles.logotext}>{I18n.t('logo.welcome')}</Text>
         </HideWithKeyboard>
       </View>
     )
