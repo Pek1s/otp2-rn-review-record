@@ -14,9 +14,8 @@ export default class LanguageSettings extends React.Component {
         super();
         this.state = {
             languages: [],
-            value: false,
+            value: true,
             langValue:"en",
-            select: "Select Language",
         }
         this.onLanguage=this.onLanguage.bind(this);
     }
@@ -50,12 +49,11 @@ export default class LanguageSettings extends React.Component {
     render() {
       return (
         <View style={styles.container}>
-        <Text>{I18n.t('hello')}</Text>
-        
+            <Text style={styles.biggerGeneralText}>{I18n.t('langSettings.SelectLang')}</Text>
         <View>
             <TouchableOpacity onPress={this.onLanguage}>
             <View>
-                <Text>{this.state.select}</Text>
+                <Text style={styles.generalText}>{this.state.select}</Text>
             </View>
         </TouchableOpacity>
         <View>
@@ -73,6 +71,16 @@ export default class LanguageSettings extends React.Component {
       backgroundColor: '#242628',
       justifyContent: 'center',
       alignItems: 'center',
+    },
+    biggerGeneralText: {
+        color: "rgba(255, 255, 255, 0.6)",
+        fontSize: 22,
+        fontWeight: "500"
+    },
+    generalText: {
+        color: "rgba(255, 255, 255, 0.6)",
+        fontSize: 18,
+        fontWeight: "500"
     }
   });
   

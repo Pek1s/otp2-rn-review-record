@@ -58,5 +58,8 @@
     "makereview": {
         "Submit": "Submit",
         "WriteYourReview": "Write Your Review"
+    },
+    "langSettings": {
+        "SelectLang": "Please select a language"
     }
 }

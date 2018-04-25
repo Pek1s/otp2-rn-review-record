@@ -25,6 +25,6 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: Exponent.Constants.statusBarHeight
+    marginTop: Exponent.Constants.statusBarHeight,
   }
 });
