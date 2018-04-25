@@ -141,18 +141,18 @@ export default class Routes extends React.Component {
           <Scene
             key="editreview"
             component={EditReview}
-            title="Edit Review"
+            renderTitle={() => {return I18n.t('routes.EditReview')}}
             hideNavBar={false}
             onRight={() => Actions.home()}
-            rightTitle={"home"}
+            rightTitle={() => {return I18n.t('routes.home')}}
           />
           <Scene
             key="language"
             component={LanguageSettings}
-            title="language"
+            renderTitle={() => {return I18n.t('routes.languageSettings')}}
             hideNavBar={false}
             onRight={() => Actions.home()}
-            rightTitle={"home"}
+            rightTitle={() => {return I18n.t('routes.home')}}
           />
         </Scene>
       </Router>

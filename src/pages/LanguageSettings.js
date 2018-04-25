@@ -17,7 +17,6 @@ export default class LanguageSettings extends React.Component {
             value: true,
         }
     }
-
     onSelectLanguage() {
         return(
             language.map((data, i)=> {
