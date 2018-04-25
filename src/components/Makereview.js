@@ -4,6 +4,7 @@ import { StyleSheet, TextInput, Text, View, TouchableOpacity, Keyboard } from 'r
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import {store} from '../Store.js';
+import I18n from '../utils/i18n';
 
 class Makereview extends React.Component {
     constructor(props){
@@ -46,7 +47,7 @@ class Makereview extends React.Component {
             <View style={{flex: 1}}>
                 <TextInput
                     underlineColorAndroid = "transparent"
-                    placeholder = "Write your review"
+                    placeholder = {I18n.t('makereview.WriteYourReview')}
                     placeholderTextColor = "white"
                     autoCapitalize = "none"
                     style={styles.textinput}
@@ -56,7 +57,7 @@ class Makereview extends React.Component {
                     value={this.props.writereview}
                     editable = {true}/>
                 <TouchableOpacity style={styles.submitButton} onPress={this.onSubmit}>
-                    <Text style = {styles.submitButtonText}> Submit </Text>
+                    <Text style = {styles.submitButtonText}>{I18n.t('makereview.Submit')}</Text>
                 </TouchableOpacity>
             </View>
         );

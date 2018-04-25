@@ -3,9 +3,10 @@ import axios from 'axios'
 import { StyleSheet, Text, TextInput, View, Image, Dimensions, TouchableOpacity } from 'react-native';
 import { store } from '../Store.js';
 import { Actions } from 'react-native-router-flux';
+import I18n from '../utils/i18n';
 import Reviews from '../components/Reviews.js'
-const notFoundImage = require('../images/question-mark.jpg');
 
+const notFoundImage = require('../images/question-mark.jpg');
 
 export default class AlbumView extends React.Component {
   constructor(props) {
@@ -67,7 +68,7 @@ axios.post(
               artistid: this.props.artistid,
               albumImg: this.props.albumImg
               })}>
-              <Text style={styles.buttonText}>Review this album</Text>
+              <Text style={styles.buttonText}>{I18n.t('album.ReviewThisAlbum')}</Text>
             </TouchableOpacity>
           </View>
       </View>

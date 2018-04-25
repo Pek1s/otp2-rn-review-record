@@ -1,4 +1,22 @@
 {
+    "logo": {
+        "welcome": "Välkommen till Review app"
+    },
+    "routes": {
+        "Login": "Logga In",
+        "Register": "Registrera",
+        "Home": "Hem",
+        "Search": "Söka",
+        "home": "Hem",
+        "Artist": "Artist",
+        "Album": "Album",
+        "Review": "Recension",
+        "Latest": "Senat",
+        "Settings": "Inställningar",
+        "UserReviews": "Användarrecensioner",
+        "EditReview": "Redigera Recension",
+        "languageSettings": "Språkinställningar"
+    },
     "login": {
         "Username": "Användarnamnet",
         "Password": "Lösenord",
@@ -33,5 +51,12 @@
     "search": {
         "Search artists or albums": "Sök artister eller album",
         "Search": "Sök"
+    },
+    "album": {
+        "ReviewThisAlbum": "Lämna en recension"
+    },
+    "makereview": {
+        "Submit": "Lämna",
+        "WriteYourReview": "Skriv din recension"
     }
 }

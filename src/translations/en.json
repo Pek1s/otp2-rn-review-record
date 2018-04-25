@@ -1,4 +1,22 @@
 {
+    "logo": {
+        "welcome": "Welcome to Review App"
+    },
+    "routes": {
+        "Login": "Login",
+        "Register": "Register",
+        "Home": "Home",
+        "Search": "Search",
+        "home": "Home",
+        "Artist": "Artist",
+        "Album": "Album",
+        "Review": "Review",
+        "Latest": "Latest",
+        "Settings": "Settings",
+        "UserReviews": "User Reviews",
+        "EditReview": "Edit Review",
+        "languageSettings": "Language Settings"
+    },
     "login": {
         "Username": "Username",
         "Password": "Password",
@@ -33,5 +51,12 @@
     "search": {
         "Search artists or albums": "Search artists or albums",
         "Search": "Search"
+    },
+    "album": {
+        "ReviewThisAlbum": "Leave a review"
+    },
+    "makereview": {
+        "Submit": "Submit",
+        "WriteYourReview": "Write Your Review"
     }
 }

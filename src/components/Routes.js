@@ -1,103 +1,120 @@
-import React, {Component} from 'react';
-import {Router, Stack, Scene} from 'react-native-router-flux';
-import Login from '../pages/Login';
-import SignUp from '../pages/SignUp';
-import Home from '../pages/Home';
-import SearchPage from '../pages/SearchPage';
-import Artist from '../pages/Artist';
-import Album from '../pages/Album';
-import Review from '../pages/Review';
-import LatestReviews from '../pages/LatestReviews';
-import ControlPanel from '../pages/ControlPanel';
+
+import React, { Component } from "react";
+import { Router, Stack, Scene } from "react-native-router-flux";
+import I18n from '../utils/i18n';
+
+import Login from "../pages/Login";
+import SignUp from "../pages/SignUp";
+import Home from "../pages/Home";
+import SearchPage from "../pages/SearchPage";
+import Artist from "../pages/Artist";
+import Album from "../pages/Album";
+import Review from "../pages/Review";
+import LatestReviews from "../pages/LatestReviews";
+import ControlPanel from "../pages/ControlPanel";
+import UserReviews from "../pages/UserReviews";
+import EditReview from "../pages/EditReview";
 import LanguageSettings from '../pages/LanguageSettings';
 
 import { Actions } from 'react-native-router-flux';
 
-
 export default class Routes extends React.Component {
+
   render() {
     return (
       <Router>
-        <Scene key="root" hideNavBar={false}>
+        <Scene 
+          key="root" 
+          hideNavBar={false}
+        >
           <Scene
             key="login"
             component={Login}
-            title="Login"
+            renderTitle={() => {return I18n.t('routes.Login')}}
             hideNavBar={true}
           />
-          <Scene key="register" component={SignUp} title="Register" />
-          <Scene key="home" component={Home} title="Home" hideNavBar={true} />
+          <Scene 
+            key="register" 
+            component={SignUp} 
+            renderTitle={() => {return I18n.t('routes.Register')}}
+          />
+          <Scene 
+            key="home" 
+            component={Home} 
+            renderTitle={() => {return I18n.t('routes.Home')}} 
+            hideNavBar={true} 
+          />
           <Scene
             key="search"
             component={SearchPage}
-            title="Search"
+            renderTitle={() => {return I18n.t('routes.Search')}}
             hideNavBar={false}
             onRight={() => Actions.home()}
-            rightTitle={"home"}
+            rightTitle={() => {return I18n.t('routes.home')}}
           />
           <Scene
             key="artist"
             component={Artist}
-            title="Artist"
+            renderTitle={() => {return I18n.t('routes.Artist')}}
             hideNavBar={false}
             onRight={() => Actions.home()}
-            rightTitle={"home"}
+            rightTitle={() => {return I18n.t('routes.home')}}
           />
           <Scene
             key="album"
             component={Album}
-            title="Album"
+            renderTitle={() => {return I18n.t('routes.Album')}}
             hideNavBar={false}
             onRight={() => Actions.home()}
-            rightTitle={"home"}
+            rightTitle={() => {return I18n.t('routes.home')}}
           />
           <Scene
             key="review"
             component={Review}
-            title="Review"
+            renderTitle={() => {return I18n.t('routes.Review')}}
             hideNavBar={false}
             onRight={() => Actions.home()}
-            rightTitle={"home"}
+            rightTitle={() => {return I18n.t('routes.home')}}
           />
           <Scene
             key="latest"
             component={LatestReviews}
-            title="Latest"
+            renderTitle={() => {return I18n.t('routes.Latest')}}
             hideNavBar={true}
             onRight={() => Actions.home()}
-            rightTitle={"home"}
+            rightTitle={() => {return I18n.t('routes.home')}}
           />
           <Scene
-            key="controlpanel"
+            key="settings"
             component={ControlPanel}
-            title="Latest"
-            hideNavBar={true}
+            renderTitle={() => {return I18n.t('routes.Settings')}}
+            hideNavBar={false}
             onRight={() => Actions.home()}
-            rightTitle={"home"}
+            rightTitle={() => {return I18n.t('routes.home')}}
           />
           <Scene
             key="userreview"
             component={UserReviews}
-            title="UserReviews"
+            renderTitle={() => {return I18n.t('routes.UserReviews')}}
             hideNavBar={false}
             onRight={() => Actions.home()}
-            rightTitle={"home"}
+            rightTitle={() => {return I18n.t('routes.home')}}
           />
           <Scene
             key="editreview"
             component={EditReview}
-            title="Edit Review"
+            renderTitle={() => {return I18n.t('routes.EditReview')}}
             hideNavBar={false}
             onRight={() => Actions.home()}
-            rightTitle={"home"}
+            rightTitle={() => {return I18n.t('routes.home')}}
           />
           <Scene
             key="language"
             component={LanguageSettings}
-            title="language"
+            renderTitle={() => {return I18n.t('routes.languageSettings')}}
             hideNavBar={false}
             onRight={() => Actions.home()}
-            rightTitle={"home"}
+            rightTitle={() => {return I18n.t('routes.home')}}
           />
         </Scene>
       </Router>
