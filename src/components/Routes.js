@@ -43,6 +43,7 @@ export default class Routes extends React.Component {
             key="register" 
             component={SignUp} 
             renderTitle={() => {return I18n.t('routes.Register')}}
+            hideNavBar={true}
           />
           <Scene 
             key="tabbar"

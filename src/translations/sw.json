@@ -15,7 +15,8 @@
         "Settings": "Inställningar",
         "UserReviews": "Användarrecensioner",
         "EditReview": "Redigera Recension",
-        "languageSettings": "Språkinställningar"
+        "languageSettings": "Språkinställningar",
+        "Profile": "Profil"
     },
     "login": {
         "Username": "Användarnamnet",
@@ -40,7 +41,8 @@
         "AlertTitle": "Fel",
         "AlertMessage": "Kontrollera din inmatning",
         "Cancel": "Annulera",
-        "OK": "OK"
+        "OK": "OK",
+        "emptyMessage": ""
     },
     "home": {
         "Search": "Sök",
