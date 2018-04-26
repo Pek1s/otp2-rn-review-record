@@ -40,11 +40,11 @@ export default class Loginform extends React.Component {
     } else {
       this.setState(() => ({usernameError: null}));
     }
-    if (this.state.password == "" || this.state.password < 5) {
-      this.setState(() => ({nameError: I18n.t('login.AlertMessagePassword')}));
+    if (this.state.password == "" && this.state.password < 5) {
+      this.setState(() => ({passwordError: I18n.t('login.AlertMessagePassword')}));
       isError = true;
     } else {
-      this.setState(() => ({nameError: null}));
+      this.setState(() => ({passwordError: null}));
     }
     return isError;
   }
