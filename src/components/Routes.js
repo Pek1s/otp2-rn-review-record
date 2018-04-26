@@ -15,6 +15,7 @@ import ControlPanel from "../pages/ControlPanel";
 import UserReviews from "../pages/UserReviews";
 import EditReview from "../pages/EditReview";
 import LanguageSettings from '../pages/LanguageSettings';
+import Profile from '../pages/Profile';
 
 import { Actions } from 'react-native-router-flux';
 
@@ -125,6 +126,14 @@ export default class Routes extends React.Component {
             key="review"
             component={Review}
             renderTitle={() => {return I18n.t('routes.Review')}}
+            hideNavBar={false}
+            onRight={() => Actions.home()}
+            rightTitle={() => {return I18n.t('routes.home')}}
+          />
+          <Scene
+            key="profile"
+            component={Profile}
+            renderTitle={() => {return I18n.t('routes.Profile')}}
             hideNavBar={false}
             onRight={() => Actions.home()}
             rightTitle={() => {return I18n.t('routes.home')}}

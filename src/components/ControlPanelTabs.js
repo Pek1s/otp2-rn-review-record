@@ -15,7 +15,7 @@ export default class ControlPanelTabs extends React.Component {
       <View style={styles.tabsContainer}>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.search()}
+          onPress={() => Actions.profile()}
         >
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}> Account Settings </Text>

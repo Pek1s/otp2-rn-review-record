@@ -15,7 +15,8 @@
         "Settings": "Settings",
         "UserReviews": "User Reviews",
         "EditReview": "Edit Review",
-        "languageSettings": "Language Settings"
+        "languageSettings": "Language Settings",
+        "Profile": "Profile"
     },
     "login": {
         "Username": "Username",
