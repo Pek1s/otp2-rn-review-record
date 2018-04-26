@@ -7,12 +7,8 @@ import {
   View,
   TouchableOpacity,
   Keyboard,
-<<<<<<< HEAD
   Alert,
   Dimensions
-=======
-  Alert
->>>>>>> e4e3d2db2bb0ae6cdcf296892f376dc8c88636f1
 } from "react-native";
 import axios from "axios";
 import I18n from '../utils/i18n';
@@ -44,11 +40,11 @@ export default class Loginform extends React.Component {
     } else {
       this.setState(() => ({usernameError: null}));
     }
-    if (this.state.password == "" || this.state.password < 5) {
-      this.setState(() => ({nameError: I18n.t('login.AlertMessagePassword')}));
+    if (this.state.password == "" && this.state.password < 5) {
+      this.setState(() => ({passwordError: I18n.t('login.AlertMessagePassword')}));
       isError = true;
     } else {
-      this.setState(() => ({nameError: null}));
+      this.setState(() => ({passwordError: null}));
     }
     return isError;
   }
@@ -98,11 +94,7 @@ export default class Loginform extends React.Component {
       .catch(err => {
         Alert.alert(
           I18n.t('login.AlertTitle'),
-<<<<<<< HEAD
           I18n.t('login.generalError'),
-=======
-          I18n.t('login.AlertMessage'),
->>>>>>> e4e3d2db2bb0ae6cdcf296892f376dc8c88636f1
           [
             {text: I18n.t('login.Cancel')},
             {text: I18n.t('login.OK')},

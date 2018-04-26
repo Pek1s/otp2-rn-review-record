@@ -16,7 +16,6 @@ import UserReviews from "../pages/UserReviews";
 import EditReview from "../pages/EditReview";
 import LanguageSettings from '../pages/LanguageSettings';
 
-<<<<<<< HEAD
 import { Actions } from 'react-native-router-flux';
 
 const TabIcon = ({ selected, title }) => {
@@ -24,16 +23,6 @@ const TabIcon = ({ selected, title }) => {
     <Text style={{color:selected ? 'red' : 'black'}}>{title}</Text>
   )
 }
-=======
-import { Actions } from "react-native-router-flux";
->>>>>>> e4e3d2db2bb0ae6cdcf296892f376dc8c88636f1
-
-const TabIcon = ({ selected, title }) => {
-  return (
-    <Text style={{color:selected ? 'red' : 'black'}}>{title}</Text>
-  )
-}
-
 export default class Routes extends React.Component {
 
   render() {
@@ -53,10 +42,7 @@ export default class Routes extends React.Component {
             key="register" 
             component={SignUp} 
             renderTitle={() => {return I18n.t('routes.Register')}}
-<<<<<<< HEAD
             hideNavBar={true}
-=======
->>>>>>> e4e3d2db2bb0ae6cdcf296892f376dc8c88636f1
           />
           <Scene 
             key="tabbar"
