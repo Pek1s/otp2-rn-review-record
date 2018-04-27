@@ -1,6 +1,14 @@
 
 import React, { Component } from "react";
-import { Router, Stack, Scene, Text } from "react-native-router-flux";
+import {
+  StatusBar,
+  Text,
+  View,
+  StyleSheet,
+  PixelRatio,
+  Dimensions
+} from "react-native";
+import { Router, Scene } from "react-native-router-flux";
 import I18n from '../utils/i18n';
 
 import Login from "../pages/Login";
@@ -17,12 +25,21 @@ import EditReview from "../pages/EditReview";
 import LanguageSettings from '../pages/LanguageSettings';
 import Profile from '../pages/Profile';
 
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Actions } from 'react-native-router-flux';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-const TabIcon = ({ selected, title }) => {
-  return (
-    <Text style={{color:selected ? 'red' : 'black'}}>{title}</Text>
-  )
+class TabIcon extends Component {
+  render() {
+    var color = this.props.selected ? '#ffffff' : '#ffffff';
+
+    return (
+      <View style={{flex:1, flexDirection:'column', alignItems:'center', alignSelf:'center', justifyContent: 'center'}}>
+        <Icon style={{color: color}} name={this.props.iconName || "circle"} size={28}/>
+        <Text style={{color: color, fontSize: 15}}>{this.props.title}</Text>
+      </View>
+    );
+  }
 }
 
 const TabIcon = ({ selected, title }) => {
@@ -35,7 +52,12 @@ export default class Routes extends React.Component {
 
   render() {
     return (
-      <Router>
+      <Router navigationBarStyle={styles.navBar}
+      titleStyle={styles.navBarTitle}
+      barButtonTextStyle={styles.barButtonTextStyle}
+      barButtonIconStyle={styles.barButtonIconStyle}
+      tintColor='white'
+      >
         <Scene 
           key="root" 
           hideNavBar={false}
@@ -55,7 +77,7 @@ export default class Routes extends React.Component {
           <Scene 
             key="tabbar"
             tabs={true}
-            tabBarStyle={{backgroundColor: '#222222'}}
+            tabBarStyle={styles.tabBar} 
             tabBarPosition='bottom'
           >
             <Scene 
@@ -63,47 +85,49 @@ export default class Routes extends React.Component {
               component={Home} 
               renderTitle={() => {return I18n.t('routes.Home')}} 
               hideNavBar={true} 
+              iconName= "home"
+              icon={TabIcon}
             />
             <Scene
               key="search"
               component={SearchPage}
               renderTitle={() => {return I18n.t('routes.Search')}}
-              hideNavBar={false}
-              onRight={() => Actions.home()}
-              rightTitle={() => {return I18n.t('routes.home')}}
+              hideNavBar={true}
+              iconName= "search"
+              icon={TabIcon}
             />
             <Scene
               key="latest"
               component={LatestReviews}
               renderTitle={() => {return I18n.t('routes.Latest')}}
               hideNavBar={true}
-              onRight={() => Actions.home()}
-              rightTitle={() => {return I18n.t('routes.home')}}
+              iconName= "newspaper-o"
+              icon={TabIcon}
+
             />
             <Scene
               key="settings"
               component={ControlPanel}
               renderTitle={() => {return I18n.t('routes.Settings')}}
               hideNavBar={false}
-              onRight={() => Actions.home()}
-              rightTitle={() => {return I18n.t('routes.home')}}
+              iconName= "gear"
+              icon={TabIcon}
             />
-            <Scene
-              key="userreview"
-              component={UserReviews}
-              renderTitle={() => {return I18n.t('routes.UserReviews')}}
-              hideNavBar={false}
-              onRight={() => Actions.home()}
-              rightTitle={() => {return I18n.t('routes.home')}}
-            />
+            
           </Scene>
+        <Scene
+            key="userreview"
+            component={UserReviews}
+            renderTitle={() => {return I18n.t('routes.UserReviews')}}
+            hideNavBar={false}
+            onRight={() => Actions.home()}
+            rightTitle={() => {return I18n.t('routes.home')}}
+        />  
         <Scene
             key="language"
             component={LanguageSettings}
             renderTitle={() => {return I18n.t('routes.languageSettings')}}
             hideNavBar={false}
-            onRight={() => Actions.home()}
-            rightTitle={() => {return I18n.t('routes.home')}}
           />
         <Scene
             key="editreview"
@@ -166,3 +190,27 @@ export default class Routes extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+
+    navBar: {
+    backgroundColor: '#222222',
+    height: Dimensions.get("window").height / 10,
+    },
+    navBarTitle: {
+      color: '#FFFFFF',
+      fontSize: 20
+    },
+    barButtonTextStyle: {
+      color: 'red'
+    },
+    barButtonIconStyle: {
+      tintColor: 'white'
+    },
+    tabBar: {
+      borderTopColor: '#222222',
+      borderTopWidth: 1 / PixelRatio.get(),
+      backgroundColor: '#222222',
+      opacity: 0.98
+  },
+});

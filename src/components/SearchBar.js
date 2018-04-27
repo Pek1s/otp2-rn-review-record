@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput, Text, View, TouchableOpacity, StyleSheet, ScrollView, Keyboard } from 'react-native';
+import { TextInput, Text, View, TouchableOpacity, StyleSheet, ScrollView, Keyboard, Dimensions } from 'react-native';
 import { searchArtist, searchAlbum } from '../Spotify';
 import SearchResult from '../components/SearchResult';
 import { store } from '../Store.js';
@@ -45,19 +45,19 @@ const styles = StyleSheet.create({
   componentsWrapper:{
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#242628',
+    backgroundColor: '#222222',
   },
   searchObjects: {
     flex: 1,
     marginHorizontal: 15,
     alignItems: 'center',
-    backgroundColor: '#242628',
+    backgroundColor: '#222222',
     flexDirection: 'row',
   },
   inputBox: {
     backgroundColor: '#3f423f',
+    height: Dimensions.get("window").height / 14,
     width: '75%',
-    height: 40,
     margin: 5,
     paddingHorizontal: 30,
     fontSize: 20,
@@ -67,14 +67,15 @@ const styles = StyleSheet.create({
   },
   Button: {
     width: '25%',
-    height: 40,
-    margin: 5,
-    paddingTop: 5,
+    alignItems: 'center',
+    height: Dimensions.get("window").height / 14,
     backgroundColor: '#35912e',
     borderRadius: 25,
+    marginVertical: 10,
   },
   buttonText: {
-    fontSize: 20,
+    fontSize: 21,
+    paddingTop: 10,
     fontWeight: '500',
     color: 'rgba(255, 255, 255, 0.7)',
     textAlign: 'center',
