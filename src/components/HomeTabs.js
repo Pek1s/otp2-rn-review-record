@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   },
   tabsInnerItem: {
     flex: 1,
-    backgroundColor: "#3f423f",
+    backgroundColor: "#35912e",
     alignItems: "center",
     justifyContent: "center"
   },
