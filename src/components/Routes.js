@@ -42,13 +42,6 @@ class TabIcon extends Component {
     );
   }
 }
-
-const TabIcon = ({ selected, title }) => {
-  return (
-    <Text style={{color:selected ? 'red' : 'black'}}>{title}</Text>
-  )
-}
-
 export default class Routes extends React.Component {
 
   render() {
