@@ -3,6 +3,7 @@
         "welcome": "Välkommen till Review app"
     },
     "routes": {
+        "AdminPanel": "Admin Panel",
         "Login": "Logga In",
         "Register": "Registrera",
         "Home": "Hem",

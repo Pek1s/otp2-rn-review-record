@@ -23,7 +23,8 @@ import ControlPanel from "../pages/ControlPanel";
 import UserReviews from "../pages/UserReviews";
 import EditReview from "../pages/EditReview";
 import LanguageSettings from '../pages/LanguageSettings';
-import Profile from '../pages/Profile';
+import AdminPanel from "../pages/AdminPanel";
+import SearchUserPage from "../pages/SearchUserPage";
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Actions } from 'react-native-router-flux';
@@ -112,8 +113,7 @@ export default class Routes extends React.Component {
               hideNavBar={false}
               iconName= "gear"
               icon={TabIcon}
-            />
-            
+            />            
           </Scene>
         <Scene
             key="userreview"
@@ -162,25 +162,17 @@ export default class Routes extends React.Component {
             rightTitle={() => {return I18n.t('routes.home')}}
           />
           <Scene
-            key="profile"
-            component={Profile}
-            renderTitle={() => {return I18n.t('routes.Profile')}}
+            key="adminpanel"
+            component={AdminPanel}
+            renderTitle={() => {return I18n.t('routes.AdminPanel')}}
             hideNavBar={false}
             onRight={() => Actions.home()}
             rightTitle={() => {return I18n.t('routes.home')}}
           />
           <Scene
-            key="editreview"
-            component={EditReview}
-            renderTitle={() => {return I18n.t('routes.EditReview')}}
-            hideNavBar={false}
-            onRight={() => Actions.home()}
-            rightTitle={() => {return I18n.t('routes.home')}}
-          />
-          <Scene
-            key="language"
-            component={LanguageSettings}
-            renderTitle={() => {return I18n.t('routes.languageSettings')}}
+            key="searchuser"
+            component={SearchUserPage}
+            renderTitle={() => {return I18n.t('routes.AdminPanel')}}
             hideNavBar={false}
             onRight={() => Actions.home()}
             rightTitle={() => {return I18n.t('routes.home')}}
