@@ -31,10 +31,10 @@ export default class ControlPanelTabs extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.login()}
+          onPress={() => Actions.adminpanel()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Admin Settings </Text>
+            <Text style={styles.generalText}> Admin Panel </Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity

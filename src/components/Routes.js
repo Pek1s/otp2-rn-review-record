@@ -23,6 +23,8 @@ import ControlPanel from "../pages/ControlPanel";
 import UserReviews from "../pages/UserReviews";
 import EditReview from "../pages/EditReview";
 import LanguageSettings from '../pages/LanguageSettings';
+import AdminPanel from "../pages/AdminPanel";
+import SearchUserPage from "../pages/SearchUserPage";
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Actions } from 'react-native-router-flux';
@@ -104,8 +106,7 @@ export default class Routes extends React.Component {
               hideNavBar={false}
               iconName= "gear"
               icon={TabIcon}
-            />
-            
+            />            
           </Scene>
         <Scene
             key="userreview"
@@ -149,6 +150,22 @@ export default class Routes extends React.Component {
             key="review"
             component={Review}
             renderTitle={() => {return I18n.t('routes.Review')}}
+            hideNavBar={false}
+            onRight={() => Actions.home()}
+            rightTitle={() => {return I18n.t('routes.home')}}
+          />
+          <Scene
+            key="adminpanel"
+            component={AdminPanel}
+            renderTitle={() => {return I18n.t('routes.AdminPanel')}}
+            hideNavBar={false}
+            onRight={() => Actions.home()}
+            rightTitle={() => {return I18n.t('routes.home')}}
+          />
+          <Scene
+            key="searchuser"
+            component={SearchUserPage}
+            renderTitle={() => {return I18n.t('routes.AdminPanel')}}
             hideNavBar={false}
             onRight={() => Actions.home()}
             rightTitle={() => {return I18n.t('routes.home')}}

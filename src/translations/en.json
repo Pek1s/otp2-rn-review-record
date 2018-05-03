@@ -3,6 +3,7 @@
         "welcome": "Welcome to Review App"
     },
     "routes": {
+        "AdminPanel": "Admin Panel",
         "Login": "Login",
         "Register": "Register",
         "Home": "Home",
