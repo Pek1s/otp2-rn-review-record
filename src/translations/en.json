@@ -16,12 +16,8 @@
         "Settings": "Settings",
         "UserReviews": "User Reviews",
         "EditReview": "Edit Review",
-<<<<<<< HEAD
         "languageSettings": "Language Settings",
         "Profile": "Profile"
-=======
-        "languageSettings": "Language Settings"
->>>>>>> add more translations (navbar, logotitle ext)
     },
     "login": {
         "Username": "Username",
