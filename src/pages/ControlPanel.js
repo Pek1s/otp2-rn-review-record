@@ -9,7 +9,9 @@ export default class ControlPanel extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+      <ScrollView>
         <ControlPanelTabs/>
+      </ScrollView>
       </View>
     )
   }

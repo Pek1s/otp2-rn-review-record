@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Dimensions
 } from "react-native";
+import I18n from '../utils/i18n';
 import { Actions } from "react-native-router-flux";
 
 export default class ControlPanelTabs extends React.Component {
@@ -75,6 +76,14 @@ export default class ControlPanelTabs extends React.Component {
         >
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}>{I18n.t('settings.Info')}</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.tabsItem}
+          onPress={() => Actions.controlpanel()}
+        >
+          <View style={styles.tabsInnerItem}>
+            <Text style={styles.generalText}>{I18n.t('settings.LoginLogout')}</Text>
           </View>
         </TouchableOpacity>
       </View>

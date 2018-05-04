@@ -3,7 +3,6 @@
         "welcome": "Welcome to Review App"
     },
     "routes": {
-        "AdminPanel": "Admin Panel",
         "Login": "Login",
         "Register": "Register",
         "Home": "Home",
@@ -73,6 +72,13 @@
     "makereview": {
         "Submit": "Submit",
         "WriteYourReview": "Write Your Review"
+    },
+    "settings": {
+        "AccountSettings": "Account Settings",
+        "LanguageSettings": "Language Settings",
+        "ThemeSettings": "Theme Settings",
+        "PrivacyAndSafetySettings" : "Privacy and Security Settings",
+        "NotificationsSettings": "Notifications Settings"
     },
     "langSettings": {
         "SelectLang": "Please select a language"

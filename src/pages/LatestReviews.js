@@ -38,6 +38,6 @@ export default class LatestReviews extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#242628"
+    backgroundColor: "#222222"
   }
 });
