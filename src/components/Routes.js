@@ -25,6 +25,7 @@ import EditReview from "../pages/EditReview";
 import LanguageSettings from '../pages/LanguageSettings';
 import AdminPanel from "../pages/AdminPanel";
 import SearchUserPage from "../pages/SearchUserPage";
+import Profile from '../pages/Profile';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Actions } from 'react-native-router-flux';

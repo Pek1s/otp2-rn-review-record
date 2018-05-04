@@ -10,7 +10,6 @@ export default class Home extends React.Component {
     return (
       <View style={styles.container}>
       <Logo/>
-      <HomeTabs/>
       </View>
     )
   }

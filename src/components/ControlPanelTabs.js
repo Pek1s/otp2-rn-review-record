@@ -15,10 +15,10 @@ export default class ControlPanelTabs extends React.Component {
       <View style={styles.tabsContainer}>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.profile()}
+          onPress={() => Actions.controlpanel()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Account Settings </Text>
+            <Text style={styles.generalText}>{I18n.t('settings.AccountSettings')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -26,15 +26,15 @@ export default class ControlPanelTabs extends React.Component {
           onPress={() => Actions.language()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> System Settings</Text>
+            <Text style={styles.generalText}>{I18n.t('settings.LanguageSettings')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.adminpanel()}
+          onPress={() => Actions.controlpanel()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Admin Panel </Text>
+            <Text style={styles.generalText}>{I18n.t('settings.ThemeSettings')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -42,7 +42,7 @@ export default class ControlPanelTabs extends React.Component {
           onPress={() => Actions.userreview()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> User reviews</Text>
+            <Text style={styles.generalText}>{I18n.t('settings.PrivacyAndSafetySettings')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -50,7 +50,7 @@ export default class ControlPanelTabs extends React.Component {
           onPress={() => Actions.controlpanel()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Some Other Settings </Text>
+            <Text style={styles.generalText}>{I18n.t('settings.NotificationsSettings')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -58,7 +58,15 @@ export default class ControlPanelTabs extends React.Component {
           onPress={() => Actions.controlpanel()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Some Other Settings </Text>
+            <Text style={styles.generalText}>{I18n.t('settings.Support')}</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.tabsItem}
+          onPress={() => Actions.adminpanel()}
+        >
+          <View style={styles.tabsInnerItem}>
+            <Text style={styles.generalText}>{I18n.t('settings.AdminSettings')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -66,23 +74,7 @@ export default class ControlPanelTabs extends React.Component {
           onPress={() => Actions.controlpanel()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Some Other Settings </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.tabsItem}
-          onPress={() => Actions.controlpanel()}
-        >
-          <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Some Other Settings </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.tabsItem}
-          onPress={() => Actions.controlpanel()}
-        >
-          <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Some Other Settings </Text>
+            <Text style={styles.generalText}>{I18n.t('settings.Info')}</Text>
           </View>
         </TouchableOpacity>
       </View>

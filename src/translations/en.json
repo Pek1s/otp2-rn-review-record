@@ -24,7 +24,7 @@
         "Password": "Password",
         "Login": "Login",
         "No_account": "Don´t have an account yet?",
-        "SignUp": " SingUp",
+        "SignUp": " SignUp",
         "AlertMessageUsername": "Wrong username",
         "AlertMessagePassword": "Wrong password",
         "AlertTitle": "Error",
@@ -55,7 +55,13 @@
         "Search": "Search",
         "LatestReviews": "Latest Reviews",
         "MyProfile": "My Profile",
-        "Settings": "Settings"
+        "Settings": "Settings",
+        "mostRated": "Highest Ratings",
+        "listenToMusic": "Media Player",
+        "AlertTitle": "Warning",
+        "AlertMessage": "This feature is not available yet \n Stay tuned for updates",
+        "Cancel": "Cancel",
+        "OK": "OK"
     },
     "search": {
         "Search artists or albums": "Search artists or albums",

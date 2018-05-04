@@ -5,12 +5,26 @@ import {
   View,
   Image,
   TouchableOpacity,
-  Dimensions
+  Dimensions,
+  Alert
 } from "react-native";
 import I18n from '../utils/i18n';
 import { Actions } from "react-native-router-flux";
 
 export default class HomeTabs extends React.Component {
+
+  createMessage = (message) => {
+    Alert.alert(
+      I18n.t('home.AlertTitle'),
+      I18n.t('home.AlertMessage'),
+      [
+        {text: I18n.t('home.Cancel')},
+        {text: I18n.t('home.OK')},
+      ],
+      { cancelable: true }
+    )
+  }
+
   render() {
     return (
       <View style={styles.tabsContainer}>
@@ -24,15 +38,15 @@ export default class HomeTabs extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.latest()}
+          onPress={() => this.createMessage()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}>{I18n.t('home.LatestReviews')}</Text>
+            <Text style={styles.generalText}>{I18n.t('home.mostRated')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.login()}
+          onPress={() => Actions.profile()}
         >
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}>{I18n.t('home.MyProfile')}</Text>
@@ -40,10 +54,10 @@ export default class HomeTabs extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.settings()}
+          onPress={() => this.createMessage()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}>{I18n.t('home.Settings')}</Text>
+            <Text style={styles.generalText}>{I18n.t('home.ListenToMusic')}</Text>
           </View>
         </TouchableOpacity>
       </View>
