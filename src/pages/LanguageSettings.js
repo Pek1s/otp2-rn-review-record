@@ -5,7 +5,14 @@ import { Actions } from 'react-native-router-flux';
 
 const language = [
     {lang: "English", code: "en"},
-    {lang: "Swedish", code: "sw"},
+    {lang: "Svenska", code: "sw"},
+    {lang: "Suomi", code: "fi"},
+    {lang: "Dansk", code: "dk"},
+    {lang: "Norsk", code: "nw"},
+    {lang: "Afrikaans", code: "af"},
+    {lang: "Pусский" , code: "ru"},
+    {lang: "Eesti" , code: "ee"}
+
 ]
 
 export default class LanguageSettings extends React.Component {
@@ -22,6 +29,7 @@ export default class LanguageSettings extends React.Component {
         return(
             language.map((data, i)=> {
                 return (
+                   
                     <View key={i} style={styles.tabsItem}>
                         <View key={i} style={styles.tabsInnerItem}>
                             <TouchableOpacity onPress={()=>this.onSelectedLanguage(data)}>
@@ -29,6 +37,7 @@ export default class LanguageSettings extends React.Component {
                             </TouchableOpacity>
                         </View>
                     </View>
+                    
                 )
             })
         )
@@ -44,12 +53,14 @@ export default class LanguageSettings extends React.Component {
 
     render() {
       return (
+        <ScrollView>
         <View style={styles.container}>
             <Text style={styles.biggerGeneralText}>{I18n.t('langSettings.SelectLang')}</Text>
             <View>
                 {(this.state.value) ? this.onSelectLanguage() : null}
             </View>
         </View>
+        </ScrollView>
       )
     }
   };

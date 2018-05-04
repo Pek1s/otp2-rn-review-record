@@ -26,6 +26,14 @@ import LanguageSettings from '../pages/LanguageSettings';
 import AdminPanel from "../pages/AdminPanel";
 import SearchUserPage from "../pages/SearchUserPage";
 import Profile from '../pages/Profile';
+import AccountSettings from '../pages/AccountSettingsPage';
+import ThemeSettings from '../pages/ThemeSettingsPage';
+import PASSettings from '../pages/PASpage';
+import NoticationsSettings from '../pages/NotificationsSettingsPage';
+import Support from '../pages/SupportPage';
+import Info from '../pages/InfoPage';
+import LoginLogout from '../pages/LoginLogoutPage';
+
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Actions } from 'react-native-router-flux';
@@ -122,7 +130,56 @@ export default class Routes extends React.Component {
             component={LanguageSettings}
             renderTitle={() => {return I18n.t('routes.languageSettings')}}
             hideNavBar={false}
-          />
+        />
+        <Scene
+            key="accountSettings"
+            component={AccountSettings}
+            renderTitle={() => {return I18n.t('routes.AccountSettings')}}
+            hideNavBar={false}
+            rightTitle={() => {return I18n.t('routes.home')}}
+        />
+        <Scene
+            key="themeSettings"
+            component={ThemeSettings}
+            renderTitle={() => {return I18n.t('routes.ThemeSettings')}}
+            hideNavBar={false}
+            rightTitle={() => {return I18n.t('routes.home')}}
+        />
+        <Scene
+            key="pasSettings"
+            component={PASSettings}
+            renderTitle={() => {return I18n.t('routes.PASSettings')}}
+            hideNavBar={false}
+            rightTitle={() => {return I18n.t('routes.home')}}
+        />
+        <Scene
+            key="NotificationSettings"
+            component={NoticationsSettings}
+            renderTitle={() => {return I18n.t('routes.NotificationsSettings')}}
+            hideNavBar={false}
+            rightTitle={() => {return I18n.t('routes.home')}}
+        />
+        <Scene
+            key="support"
+            component={Support}
+            renderTitle={() => {return I18n.t('routes.Support')}}
+            hideNavBar={false}
+            rightTitle={() => {return I18n.t('routes.home')}}
+        />
+        <Scene
+            key="info"
+            component={Info}
+            renderTitle={() => {return I18n.t('routes.info')}}
+            hideNavBar={false}
+            rightTitle={() => {return I18n.t('routes.home')}}
+        />
+        <Scene
+            key="LoginLogout"
+            component={LoginLogout}
+            renderTitle={() => {return I18n.t('routes.LoginLogout')}}
+            hideNavBar={false}
+            rightTitle={() => {return I18n.t('routes.home')}}
+        />
         <Scene
             key="editreview"
             component={EditReview}

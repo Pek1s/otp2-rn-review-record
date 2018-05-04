@@ -16,7 +16,7 @@ export default class ControlPanelTabs extends React.Component {
       <View style={styles.tabsContainer}>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.controlpanel()}
+          onPress={() => Actions.accountSettings()}
         >
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}>{I18n.t('settings.AccountSettings')}</Text>
@@ -32,7 +32,7 @@ export default class ControlPanelTabs extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.controlpanel()}
+          onPress={() => Actions.themeSettings()}
         >
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}>{I18n.t('settings.ThemeSettings')}</Text>
@@ -40,7 +40,7 @@ export default class ControlPanelTabs extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.userreview()}
+          onPress={() => Actions.pasSettings()}
         >
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}>{I18n.t('settings.PrivacyAndSafetySettings')}</Text>
@@ -48,7 +48,7 @@ export default class ControlPanelTabs extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.controlpanel()}
+          onPress={() => Actions.NotificationSettings()}
         >
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}>{I18n.t('settings.NotificationsSettings')}</Text>
@@ -56,7 +56,7 @@ export default class ControlPanelTabs extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.controlpanel()}
+          onPress={() => Actions.support()}
         >
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}>{I18n.t('settings.Support')}</Text>
@@ -72,7 +72,7 @@ export default class ControlPanelTabs extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.controlpanel()}
+          onPress={() => Actions.info()}
         >
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}>{I18n.t('settings.Info')}</Text>
@@ -80,7 +80,7 @@ export default class ControlPanelTabs extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.controlpanel()}
+          onPress={() => Actions.LoginLogout()}
         >
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}>{I18n.t('settings.LoginLogout')}</Text>

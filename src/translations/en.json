@@ -78,7 +78,11 @@
         "LanguageSettings": "Language Settings",
         "ThemeSettings": "Theme Settings",
         "PrivacyAndSafetySettings" : "Privacy and Security Settings",
-        "NotificationsSettings": "Notifications Settings"
+        "NotificationsSettings": "Notifications Settings",
+        "Support": "Support",
+        "AdminSettings": "Administrator Settings",
+        "Info": "Info",
+        "LoginLogout": "Login or Logout"
     },
     "langSettings": {
         "SelectLang": "Please select a language"

@@ -18,39 +18,36 @@ class ReviewBox extends React.Component {
         };
     }
 
-    toggle(){
+    toggle() {
       let initialValue = this.state.expanded ? this.state.maxHeight + this.state.minHeight : this.state.minHeight,
       finalValue = this.state.expanded ? this.state.minHeight : this.state.maxHeight + this.state.minHeight;
 
-  this.setState({
-      expanded : ! this.state.expanded
-  });
+        this.setState ({
+          expanded : ! this.state.expanded
+        });
 
-  this.state.animation.setValue(initialValue);
-  Animated.spring(   
-      this.state.animation,
-      {
-          toValue: finalValue
-      }
-  ).start(); 
-}
+          this.state.animation.setValue(initialValue);
+          Animated.spring (   
+            this.state.animation,
+            {
+              toValue: finalValue
+            }
+          ).start(); 
+    }
 
     _setMaxHeight(event){
       this.setState({
-          maxHeight : event.nativeEvent.layout.height
+        maxHeight : event.nativeEvent.layout.height
       });
-  }
+    }
   
-  _setMinHeight(){
+    _setMinHeight(){
       this.setState({
-          minHeight : Dimensions.get("window").height/4
+        minHeight : Dimensions.get("window").height/4
       });
-  }
+    }
 
   render() {
-
-    
-
     const toAlbumPage = () => {
       Actions.album({ 
           spotifyid: this.props.review.spotify_album_id,
@@ -68,7 +65,6 @@ class ReviewBox extends React.Component {
     return (  
       
       <Animated.View  style={[styles.reviewContainer,{height: this.state.animation}]} onLayout={this._setMinHeight.bind(this)}>
-      
         { this.props.albums && album[0] && (
             <View style={styles.albumInfo}>
             <TouchableOpacity
@@ -79,9 +75,8 @@ class ReviewBox extends React.Component {
               <Text numberOfLines={1} style={styles.artistInfoText}>{ album[0].artists[0].name }</Text>
               <Text numberOfLines={1} style={styles.artistInfoText}>{ album[0].name }</Text>
             </TouchableOpacity>
-            </View> 
-          
-        ) }
+            </View>  
+        )}
         
         <View style={styles.reviewerWrapper}>
           <View style={styles.reviewerInfoContainer}>
@@ -89,28 +84,23 @@ class ReviewBox extends React.Component {
             <Text numberOfLines={1} style={styles.reviewDataText}>{ date(this.props.review.date_time)}</Text>
           </View>
           <TouchableOpacity style={styles.userReviewContainer} onLayout={this._setMaxHeight.bind(this)} onPress={this.toggle.bind(this)}>      
-          <View style={styles.tabsInnerItem} >
+            <View style={styles.tabsInnerItem} >
               <Text style={styles.reviewText}>{ this.props.review.review_text }</Text>
-              </View>
+            </View>
           </TouchableOpacity>
         </View>
       </Animated.View > 
-        );
+    );
   }
 };
 
-function mapStateToProps(state) {
+  function mapStateToProps(state) {
     return { albums: state.recentreviews.albums  }
   };
 
 export default connect(mapStateToProps)(ReviewBox);
 
 const styles = StyleSheet.create({
-  container   : {
-    backgroundColor: '#fff',
-    margin:10,
-    overflow:'hidden'
-},
   reviewContainer: {
     flex: 1,
     flexDirection: 'row',
