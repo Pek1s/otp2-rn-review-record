@@ -1,86 +1,147 @@
-import React from 'react';
-import { TextInput, Text, View, TouchableOpacity, StyleSheet, ScrollView, Keyboard, Dimensions } from 'react-native';
-import { searchArtist, searchAlbum } from '../Spotify';
-import { store } from '../Store.js';
-import { connect } from 'redux';
-import I18n from '../utils/i18n';
+import React from "react";
+import axios from "axios";
+import I18n from "../utils/i18n";
+import {
+  Button,
+  TextInput,
+  Text,
+  View,
+  TouchableOpacity,
+  StyleSheet,
+  ScrollView,
+  Keyboard,
+  Dimensions
+} from "react-native";
+import { connect } from "react-redux";
 
-export default class SearchUser extends React.Component {
+class SearchUser extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { search: '' };
+    this.state = { search: "", results: [] };
     this.onSubmit = this.onSubmit.bind(this);
+    this.removeUser = this.removeUser.bind(this);
   }
 
-  onSubmit(){
-    Keyboard.dismiss()
-    searchArtist(this.state.search);
-    searchAlbum(this.state.search);
+  onSubmit() {
+    Keyboard.dismiss();
+    if (this.props.token) {
+      axios
+        .get(
+          "http://review-a-record.herokuapp.com/secure/users/find/" +
+            this.state.search,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              token: this.props.token
+            }
+          }
+        )
+        .then(res => {
+          this.setState({ results: res.data.user });
+        });
+    }
+  }
+
+  removeUser(userID) {
+    alert('user deleted');
   }
 
   render() {
     return (
       <View style={styles.componentsWrapper}>
         <View style={styles.searchObjects}>
-          <TextInput style={styles.inputBox}
-            placeholder={I18n.t('login.Username')}
-            onChangeText={(search) => this.setState({search})}
+          <TextInput
+            style={styles.inputBox}
+            placeholder={I18n.t("login.Username")}
+            onChangeText={search => this.setState({ search })}
           />
-          <TouchableOpacity style={styles.Button} onPress={() => this.onSubmit()}>
-            <Text style={styles.buttonText}>{I18n.t('search.Search')}</Text>
+          <TouchableOpacity
+            style={styles.Button}
+            onPress={() => this.onSubmit()}
+          >
+            <Text style={styles.buttonText}>{I18n.t("search.Search")}</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.resultsContainer}>
           <ScrollView>
-            {/* <SearchResult/> */}
+           { this.state.results.length > 0 &&
+           <View style={styles.resultsContainer}>
+            {this.state.results.map(user => (
+              <View key={`user${user.userid}`} style={styles.resultsContainer}>
+              <Text style={styles.resultText}>{user.username} </Text>
+              <Button
+                  onPress={() =>
+                    this.removeUser(
+                      user.userid
+                    )
+                  }
+                  key={`button_${user.userid}`}
+                  title="Remove user"
+                  color="#ff0000"
+                  accessibilityLabel="Remove review"
+                />
+                </View>
+            ))}
+           </View> }
           </ScrollView>
         </View>
       </View>
     );
   }
-};
+}
+
+function mapStateToProps(state) {
+  return { token: state.jwttoken };
+}
+
+export default connect(mapStateToProps)(SearchUser);
 
 const styles = StyleSheet.create({
-  componentsWrapper:{
+  componentsWrapper: {
     flex: 1,
-    alignItems: 'center',
-    backgroundColor: '#222222',
+    alignItems: "center",
+    backgroundColor: "#222222"
   },
   searchObjects: {
     flex: 1,
     marginHorizontal: 15,
-    alignItems: 'center',
-    backgroundColor: '#222222',
-    flexDirection: 'row',
+    alignItems: "center",
+    backgroundColor: "#222222",
+    flexDirection: "row"
   },
   inputBox: {
-    backgroundColor: '#3f423f',
+    backgroundColor: "#3f423f",
     height: Dimensions.get("window").height / 14,
-    width: '75%',
+    width: "75%",
     margin: 5,
     paddingHorizontal: 30,
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     borderRadius: 25,
-    color: 'rgba(255, 255, 255, 0.7)',
+    color: "rgba(255, 255, 255, 0.7)"
   },
   Button: {
-    width: '25%',
-    alignItems: 'center',
+    width: "25%",
+    alignItems: "center",
     height: Dimensions.get("window").height / 14,
-    backgroundColor: '#35912e',
+    backgroundColor: "#35912e",
     borderRadius: 25,
-    marginVertical: 10,
+    marginVertical: 10
   },
   buttonText: {
     fontSize: 21,
     paddingTop: 10,
-    fontWeight: '500',
-    color: 'rgba(255, 255, 255, 0.7)',
-    textAlign: 'center',
+    fontWeight: "500",
+    color: "rgba(255, 255, 255, 0.7)",
+    textAlign: "center"
   },
   resultsContainer: {
     flex: 7,
-    backgroundColor: '#242628',
+    backgroundColor: "#242628"
+  },
+  resultText: {
+    textAlign: 'center',
+    fontWeight: '500',
+    color: 'rgba(255, 255, 255, 0.7)',
   },
 });
