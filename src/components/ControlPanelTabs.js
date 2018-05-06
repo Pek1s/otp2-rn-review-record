@@ -31,7 +31,7 @@ export default class ControlPanelTabs extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.login()}
+          onPress={() => Actions.adminpanel()}
         >
           <View style={styles.tabsInnerItem}>
             <Text style={styles.generalText}> Admin Settings </Text>
@@ -98,8 +98,8 @@ const styles = StyleSheet.create({
     height: Dimensions.get("window").height / 8,
     width: Dimensions.get("window").width - 12,
     padding: 4,
-    borderBottomWidth : 2,
-    borderBottomColor: '#2f3235',
+    borderBottomWidth: 2,
+    borderBottomColor: "#2f3235"
   },
   tabsInnerItem: {
     height: "100%",

@@ -13,7 +13,8 @@ const initialState = {
   recentreviews: "",
   loggedIn: "false",
   isAdmin: "false",
-  user: ""
+  user: "",
+  users: ""
 };
 
 const reducer = (state = initialState, action) => {
