@@ -51,6 +51,7 @@ class TabIcon extends Component {
     );
   }
 }
+
 export default class Routes extends React.Component {
 
   render() {
