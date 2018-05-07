@@ -17,6 +17,13 @@
         "UserReviews": "User Reviews",
         "EditReview": "Edit Review",
         "languageSettings": "Language Settings",
+        "AccountSettings": "Account Settings",
+        "ThemeSettings": "Theme Settings",
+        "PASSettings": "Privacy and Security settings",
+        "NotificationsSettings": "Notifications Settings",
+        "Support": "Support",
+        "info": "Info",
+        "LoginLogout": "Login or Logout",
         "Profile": "Profile"
     },
     "login": {
@@ -85,7 +92,42 @@
         "Info": "Info",
         "LoginLogout": "Login or Logout"
     },
-    "langSettings": {
-        "SelectLang": "Please select a language"
+    "AccountSettings": {
+        "Password": "Change password",
+        "ReviewsThatUHaveLiked": "Reviews that you have liked",
+        "SearchHistory": "Search history",
+        "DataUsage": "Mobile data usage",
+        "RemoveAccount": "Remove your account"
+    },
+    "themeSettings": {
+        "Light": "Light theme",
+        "Dark": "Dark theme"
+    },
+    "PAS": {
+        "Privacy": "Account privacy",
+        "BlockedAccounts": "Blocked accounts",
+        "LinkedAccounts": "Linked accounts",
+        "AccountInformation": "Account information",
+        "PrivacyAndSecurityInfo": "Privacy and security information"
+    },
+    "Notifications": {
+        "PushNotifications": "Push notifications",
+        "EmailAndSMSNotifications": "Email and SMS Notifications",
+        "BuyImmunity": "Buy immunity from notifications"
+    },
+    "support": {
+        "GuideAndSupportCenter": "Guide and Support center",
+        "ReportAProblem": "Report a problem"
+    },
+    "info": {
+        "appUpdates": "Application updates",
+        "Advertisements": "Advertisements",
+        "PrivacyPolicy": "Privacy policy",
+        "TermsOfService": "Terms of Service",
+        "OpenSourceLibraries": "Opensource libraries"
+    },
+    "LoginLogout": {
+        "Logout": "Log out",
+        "AddAccount": "Add account"
     }
 }

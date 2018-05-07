@@ -55,7 +55,6 @@ export default class LanguageSettings extends React.Component {
       return (
         <ScrollView>
         <View style={styles.container}>
-            <Text style={styles.biggerGeneralText}>{I18n.t('langSettings.SelectLang')}</Text>
             <View>
                 {(this.state.value) ? this.onSelectLanguage() : null}
             </View>

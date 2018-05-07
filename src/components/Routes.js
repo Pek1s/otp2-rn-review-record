@@ -130,12 +130,15 @@ export default class Routes extends React.Component {
             component={LanguageSettings}
             renderTitle={() => {return I18n.t('routes.languageSettings')}}
             hideNavBar={false}
+            onRight={() => Actions.home()}
+            rightTitle={() => {return I18n.t('routes.home')}}
         />
         <Scene
             key="accountSettings"
             component={AccountSettings}
             renderTitle={() => {return I18n.t('routes.AccountSettings')}}
             hideNavBar={false}
+            onRight={() => Actions.home()}
             rightTitle={() => {return I18n.t('routes.home')}}
         />
         <Scene
@@ -143,6 +146,7 @@ export default class Routes extends React.Component {
             component={ThemeSettings}
             renderTitle={() => {return I18n.t('routes.ThemeSettings')}}
             hideNavBar={false}
+            onRight={() => Actions.home()}
             rightTitle={() => {return I18n.t('routes.home')}}
         />
         <Scene
@@ -150,6 +154,7 @@ export default class Routes extends React.Component {
             component={PASSettings}
             renderTitle={() => {return I18n.t('routes.PASSettings')}}
             hideNavBar={false}
+            onRight={() => Actions.home()}
             rightTitle={() => {return I18n.t('routes.home')}}
         />
         <Scene
@@ -157,6 +162,7 @@ export default class Routes extends React.Component {
             component={NoticationsSettings}
             renderTitle={() => {return I18n.t('routes.NotificationsSettings')}}
             hideNavBar={false}
+            onRight={() => Actions.home()}
             rightTitle={() => {return I18n.t('routes.home')}}
         />
         <Scene
@@ -164,6 +170,7 @@ export default class Routes extends React.Component {
             component={Support}
             renderTitle={() => {return I18n.t('routes.Support')}}
             hideNavBar={false}
+            onRight={() => Actions.home()}
             rightTitle={() => {return I18n.t('routes.home')}}
         />
         <Scene
@@ -171,6 +178,7 @@ export default class Routes extends React.Component {
             component={Info}
             renderTitle={() => {return I18n.t('routes.info')}}
             hideNavBar={false}
+            onRight={() => Actions.home()}
             rightTitle={() => {return I18n.t('routes.home')}}
         />
         <Scene
@@ -178,6 +186,7 @@ export default class Routes extends React.Component {
             component={LoginLogout}
             renderTitle={() => {return I18n.t('routes.LoginLogout')}}
             hideNavBar={false}
+            onRight={() => Actions.home()}
             rightTitle={() => {return I18n.t('routes.home')}}
         />
         <Scene
