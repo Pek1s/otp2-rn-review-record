@@ -17,7 +17,7 @@ import { connect } from "react-redux";
 class SearchUser extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { search: "", results: [] };
+    this.state = { search: "", results: [], deleted: null };
     this.onSubmit = this.onSubmit.bind(this);
     this.removeUser = this.removeUser.bind(this);
   }
@@ -25,8 +25,7 @@ class SearchUser extends React.Component {
   onSubmit() {
     Keyboard.dismiss();
     if (this.props.token) {
-      axios
-        .get(
+      axios.get(
           "http://review-a-record.herokuapp.com/secure/users/find/" +
             this.state.search,
           {
@@ -43,7 +42,24 @@ class SearchUser extends React.Component {
   }
 
   removeUser(userID) {
-    alert('user deleted');
+    axios.post("http://review-a-record.herokuapp.com/secure/users/delete-user",
+          {
+            token: this.props.token,
+            username: this.props.username,
+            user_to_delete: userID,
+          }
+        )
+        .then(res => {
+          if (res.data.status === 'success') {
+            const updatedList = this.state.results.filter(user => user.userid !== userID);
+            console.log(updatedList);
+            this.setState({ results: [...updatedList], deleted: 'User deleted' });
+            setTimeout(() => {
+              this.setState({ deleted: null });
+            }, 4000);
+            return;
+          } 
+        });
   }
 
   render() {
@@ -62,10 +78,12 @@ class SearchUser extends React.Component {
             <Text style={styles.buttonText}>{I18n.t("search.Search")}</Text>
           </TouchableOpacity>
         </View>
+        
         <View style={styles.resultsContainer}>
+        {this.state.deleted && <Text style={styles.deletedText}> {this.state.deleted} </Text>}
           <ScrollView>
            { this.state.results.length > 0 &&
-           <View style={styles.resultsContainer}>
+           <View>
             {this.state.results.map(user => (
               <View key={`user${user.userid}`} style={styles.resultsContainer}>
               <Text style={styles.resultText}>{user.username} </Text>
@@ -91,7 +109,7 @@ class SearchUser extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return { token: state.jwttoken };
+  return { token: state.jwttoken, username: state.user };
 }
 
 export default connect(mapStateToProps)(SearchUser);
@@ -144,4 +162,10 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: 'rgba(255, 255, 255, 0.7)',
   },
+  deletedText: {
+    textAlign: 'center',
+    fontWeight: '500',
+    fontSize: 20,
+    color: 'rgba(252, 0, 79, 0.7)',
+  }
 });
