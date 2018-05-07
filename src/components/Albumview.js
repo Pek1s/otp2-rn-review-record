@@ -1,50 +1,54 @@
 import React from 'react';
 import axios from 'axios'
-import { StyleSheet, Text, TextInput, View, Image, Dimensions, TouchableOpacity } from 'react-native';
-import { store } from '../Store.js';
+import { Button, StyleSheet, Text, TextInput, View, Image, Dimensions, TouchableOpacity, Keyboard } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import I18n from '../utils/i18n';
 import Reviews from '../components/Reviews.js'
+import { connect } from "react-redux";
 
 const notFoundImage = require('../images/question-mark.jpg');
 
-export default class AlbumView extends React.Component {
+class AlbumView extends React.Component {
   constructor(props) {
     super(props);
     this.state = { rating: '' };
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onSubmit(){
-    Keyboard.dismiss()
-/*
-axios.post(
-    'http://review-a-record.herokuapp.com/test-token',
-    {token: this.props.jwttoken}
-).then((res) => {
-    axios.post('',{
-        user_id: res.data.userid,
-        artist_name: this.props.artistname,
-        album_name: this.props.albumName,
-        spotify_artist_id: this.props.artistid,
-        spotify_album_id: this.props.spotifyid,
-        rating: this.props.rating
-      },
-      {headers: {token: this.props.jwttoken}}
-      )
-      .then((resp) => {
-          console.log(this.props.albumImg)
-        Actions.album({
-            spotifyid: this.props.spotifyid,
-            artistname: this.props.artistname,
-            artistid: this.props.artistid,
-            albumName: this.props.albumName,
-            albumImg: this.props.albumImg
-        })
+  componentDidMount(){
+    axios.get('http://review-a-record.herokuapp.com/reviews/album-rating/' + this.props.spotifyid)
+      .then((res) => {
+        this.setState({ ratingAverage: res.data.ratingAverage });
       })
-})
-*/
+      .catch(err => console.error(err));
   }
+
+  onSubmit() {
+    Keyboard.dismiss();
+    let properRating = this.state.rating;
+    if (properRating > 5) {
+      properRating = 5;
+    }
+    if (properRating < 1) {
+      properRating = 1;
+    }
+    axios.post('http://review-a-record.herokuapp.com/secure/reviews/rate-album/',
+      {
+        token: this.props.token,
+        user_id: this.props.userid,
+        spotify_album_id: this.props.spotifyid,
+        rating: properRating,
+      })
+      .then((res) => {
+        axios.get('http://review-a-record.herokuapp.com/reviews/album-rating/' + this.props.spotifyid)
+        .then((res) => {
+          this.setState({ ratingAverage: res.data.ratingAverage });
+        })
+        .catch(err => console.error(err));
+      })
+      .catch(err => console.error(err));
+  }
+
   render() {
 
     return (
@@ -53,13 +57,20 @@ axios.post(
             <View style={styles.imageWrap}>
               <Image style={styles.images} source={{uri: this.props.albumImg }}/>
             </View>
-            <Text style={styles.resultText}>{ "AVG(RATING) from db"}</Text>
+            <Text style={styles.resultText}>{ this.state.ratingAverage}</Text>
             <TextInput style={styles.inputBox}
             placeholder = "1-5"
             keyboardType = 'numeric'
               onChangeText={(rating) => this.setState({rating})}
               value={this.state.rating}
             />
+            <Button style={styles.Button}
+              onPress={() =>
+                this.onSubmit()
+              }
+              title="Rate album"
+              accessibilityLabel="Rate album"
+            > </Button>
             <Text style={styles.resultText}>{ this.props.albumName }</Text>
             <TouchableOpacity style={styles.Button} onPress={() => Actions.review({
               spotifyid: this.props.spotifyid,
@@ -76,6 +87,13 @@ axios.post(
       }
     };
 
+    function mapStateToProps(state) {
+      return { userid: state.userid, token: state.jwttoken };
+    }
+    
+    export default connect(mapStateToProps)(AlbumView);
+
+    
     const styles = StyleSheet.create({
       container: {
         flex: 1,
