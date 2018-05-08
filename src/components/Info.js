@@ -5,59 +5,53 @@ import {
   View,
   Image,
   TouchableOpacity,
-  Dimensions,
-  Alert
+  Dimensions
 } from "react-native";
 import I18n from '../utils/i18n';
 import { Actions } from "react-native-router-flux";
 
-export default class HomeTabs extends React.Component {
-
-  createMessage = (message) => {
-    Alert.alert(
-      I18n.t('home.AlertTitle'),
-      I18n.t('home.AlertMessage'),
-      [
-        {text: I18n.t('home.Cancel')},
-        {text: I18n.t('home.OK')},
-      ],
-      { cancelable: true }
-    )
-  }
-
+export default class ControlPanelTabs extends React.Component {
   render() {
     return (
       <View style={styles.tabsContainer}>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.search()}
+          onPress={() => Actions.controlpanel()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}>{I18n.t('home.Search')}</Text>
+            <Text style={styles.generalText}>{I18n.t('info.appUpdates')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => this.createMessage()}
+          onPress={() => Actions.language()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}>{I18n.t('home.mostRated')}</Text>
+            <Text style={styles.generalText}>{I18n.t('info.Advertisements')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.profile()}
+          onPress={() => Actions.controlpanel()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}>{I18n.t('home.MyProfile')}</Text>
+            <Text style={styles.generalText}>{I18n.t('info.PrivacyPolicy')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => this.createMessage()}
+          onPress={() => Actions.userreview()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}>{I18n.t('home.ListenToMusic')}</Text>
+            <Text style={styles.generalText}>{I18n.t('info.TermsOfService')}</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.tabsItem}
+          onPress={() => Actions.controlpanel()}
+        >
+          <View style={styles.tabsInnerItem}>
+            <Text style={styles.generalText}>{I18n.t('info.OpenSourceLibraries')}</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -67,20 +61,19 @@ export default class HomeTabs extends React.Component {
 
 const styles = StyleSheet.create({
   tabsContainer: {
-    flex: 1,
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "center"
+    flex: 1
   },
   tabsItem: {
-    padding: 5,
-    height: "50%",
-    width: "50%"
+    height: Dimensions.get("window").height / 8,
+    width: Dimensions.get("window").width - 12,
+    padding: 4,
+    borderBottomWidth : 2,
+    borderBottomColor: '#2f3235',
   },
   tabsInnerItem: {
-    flex: 1,
-    backgroundColor: "#35912e",
-    alignItems: "center",
+    height: "100%",
+    width: "100%",
+    backgroundColor: "transparent",
     justifyContent: "center"
   },
   generalText: {

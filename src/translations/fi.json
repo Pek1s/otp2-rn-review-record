@@ -1,0 +1,133 @@
+{
+    "logo": {
+        "welcome": "Tervetuloa Review App:iin"
+    },
+    "routes": {
+        "AdminPanel": "Admin paneeli",
+        "Login": "Kirjaudu",
+        "Register": "Rekisteröidy",
+        "Home": "Koti",
+        "Search": "Hae",
+        "home": "Koti",
+        "Artist": "Artisti",
+        "Album": "Albumi",
+        "Review": "Arvostelu",
+        "Latest": "Viimeisimmät",
+        "Settings": "Asetukset",
+        "UserReviews": "Käyttäjä Arvostelut",
+        "EditReview": "Muokkaa arvostelua",
+        "languageSettings": "Kieli asetukset",
+        "AccountSettings": "Käyttäjätili asetukset",
+        "ThemeSettings": "Teema asetukset",
+        "PASSettings": "Yksityisyys ja tietoturva",
+        "NotificationsSettings": "Ilmoitukset",
+        "Support": "Tuki",
+        "info": "Info",
+        "LoginLogout": "Kirjautumis asetukset",
+        "Profile": "Profiili"
+    },
+    "login": {
+        "Username": "Käyttäjänimi",
+        "Password": "Salasana",
+        "Login": "Kirjaudu",
+        "No_account": "Eikö sinulla ole tiliä?",
+        "SignUp": " Rekisteröidy",
+        "AlertMessageUsername": "Väärä käyttäjänimi",
+        "AlertMessagePassword": "Väärä salasana",
+        "AlertTitle": "Virhe",
+        "GeneralError": "Jotain meni pieleen... \n Kokeile myöhemmin uudestaan",
+        "Cancel": "peruuta",
+        "OK": "OK"
+    },
+    "register": {
+        "Username": "Käyttäjänimi",
+        "Name": "Etunimi",
+        "Fam_Name": "Sukunimi",
+        "Email": "Sähköposti",
+        "Password": "Salasana",
+        "Register": "Rekisteröidy",
+        "Has_account": "Onko sinulla jo tili? ",
+        "LogIn": "Kirjaudu sisään",
+        "AlertTitle": "Virhe",
+        "AlertMessageUsername": "Käyttäjänimen on oltava vähintään 5 kirjainta pitkä",
+        "AlertMessageFirstName": "Tarkista syöte",
+        "AlertMessageLastName": "Tarkista syöte",
+        "AlertMessageEmail": "Oikea sähköpostiosoite vaaditaan",
+        "AlertMessagePassWord": "Salasanan on oltava vähintään 5 kirjainta pitkä",
+        "GeneralError": "Jotain meni pieleen... \n Kokeile myöhemmin uudestaan",
+        "Cancel": "peruuta",
+        "OK": "OK"
+    },
+    "home": {
+        "Search": "Hae",
+        "LatestReviews": "Viimeisimmät",
+        "MyProfile": "Profiilini",
+        "Settings": "Asetukset",
+        "mostRated": "Korkeimmin arvostellut",
+        "listenToMusic": "Media soitin",
+        "AlertTitle": "Varoitus",
+        "AlertMessage": "Tämä toiminto ei ole vielä käytettävissä \n Odota päivityksiä",
+        "Cancel": "Peruuta",
+        "OK": "OK"
+    },
+    "search": {
+        "Search artists or albums": "Hae artisteja tai albumeja",
+        "Search": "Hae"
+    },
+    "album": {
+        "ReviewThisAlbum": "Jätä arvostelu"
+    },
+    "makereview": {
+        "Submit": "Lähetä",
+        "WriteYourReview": "Kirjoita arvostelusi"
+    },
+    "settings": {
+        "AccountSettings": "Tili asetukset",
+        "LanguageSettings": "Kieli asetukset",
+        "ThemeSettings": "Teema asetukset",
+        "PrivacyAndSafetySettings" : "Yksityisyys ja tietoturva",
+        "NotificationsSettings": "Ilmoitus asetukset",
+        "Support": "Tuki",
+        "AdminSettings": "Admin asetukset",
+        "Info": "Info",
+        "LoginLogout": "Kirjautumis asetukset"
+    },
+    "AccountSettings": {
+        "Password": "Vaihda salasana",
+        "ReviewsThatUHaveLiked": "Tykkäämäsi arvostelut",
+        "SearchHistory": "Haku historia",
+        "DataUsage": "Mobiilidatan käyttö",
+        "RemoveAccount": "Poista tilisi"
+    },
+    "themeSettings": {
+        "Light": "Kevyt teema",
+        "Dark": "Tumma teema"
+    },
+    "PAS": {
+        "Privacy": "Tilin yksityisyys",
+        "BlockedAccounts": "Estetyt käyttäjät",
+        "LinkedAccounts": "Linkitetyt tilit",
+        "AccountInformation": "Tilin tiedot",
+        "PrivacyAndSecurityInfo": "Yksityisyys ja tietoturvan ohje"
+    },
+    "Notifications": {
+        "PushNotifications": "Push ilmoitukset",
+        "EmailAndSMSNotifications": "Sähköposti- ja tekstiviesti-ilmoitukset",
+        "BuyImmunity": "Osta mainokset pois"
+    },
+    "support": {
+        "GuideAndSupportCenter": "Ohje- ja tukikeskus",
+        "ReportAProblem": "Ilmoita ongelmasta"
+    },
+    "info": {
+        "appUpdates": "Sovelluspäivitykset",
+        "Advertisements": "Mainokset",
+        "PrivacyPolicy": "Yksityisyyskäytäntö",
+        "TermsOfService": "Palvelun käyttöehdot",
+        "OpenSourceLibraries": "Avoimen lähdekoodin kirjastot"
+    },
+    "LoginLogout": {
+        "Logout": "Kirjaudu ulos",
+        "AddAccount": "Lisää tili"
+    }
+}

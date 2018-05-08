@@ -1,15 +1,15 @@
 import React from 'react';
 import { View, StyleSheet, Text, ScrollView} from 'react-native';
 import Logo from '../components/Logo';
-import HomeTabs from '../components/HomeTabs';
+import Info from '../components/Info';
 
-export default class Home extends React.Component {
+export default class ControlPanel extends React.Component {
 
 
   render() {
     return (
-      <View style={styles.container}>
-      <Logo/>
+      <View style={styles.container}> 
+        <Info/>
       </View>
     )
   }
@@ -18,7 +18,7 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#222222',
+    backgroundColor: '#242628',
     justifyContent: 'center',
     alignItems: 'center',
   }

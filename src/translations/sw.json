@@ -3,6 +3,7 @@
         "welcome": "Välkommen till Review app"
     },
     "routes": {
+        "AdminPanel": "Admin Panel",
         "Login": "Logga In",
         "Register": "Registrera",
         "Home": "Hem",
@@ -15,7 +16,15 @@
         "Settings": "Inställningar",
         "UserReviews": "Användarrecensioner",
         "EditReview": "Redigera Recension",
-        "languageSettings": "Språkinställningar"
+        "languageSettings": "Språkinställningar",
+        "AccountSettings": "Kontoinställningar",
+        "ThemeSettings": "Temainställningar",
+        "PASSettings": "Integritets- och säkerhetsinställningar",
+        "NotificationsSettings": "Meddelandeinställningar",
+        "Support": "Stöd",
+        "info": "Info",
+        "LoginLogout": "Logga in eller logga ut",
+        "Profile": "Profil"
     },
     "login": {
         "Username": "Användarnamnet",
@@ -23,8 +32,10 @@
         "Login": "Logga in",
         "No_account": "Har inget konto än?",
         "SignUp": " Bli medlem",
+        "AlertMessageUsername": "Fel användarnamn",
+        "AlertMessagePassword": "Fel Lösenord",
         "AlertTitle": "Fel",
-        "AlertMessage": "Fel användarnamn eller lösenord!",
+        "GeneralError": "Något gick fel... \n Försök igen senare",
         "Cancel": "Annullera",
         "OK": "OK"
     },
@@ -38,7 +49,12 @@
         "Has_account": "Har du ett befintligt konto? ",
         "LogIn": "Logga In",
         "AlertTitle": "Fel",
-        "AlertMessage": "Kontrollera din inmatning",
+        "AlertMessageUsername": "Användarnamnet måste vara minst 5 tecken långt",
+        "AlertMessageFirstName": "Vänligen kontrollera inmatningen",
+        "AlertMessageLastName": "Vänligen kontrollera inmatningen",
+        "AlertMessageEmail": "Giltig e-post krävs",
+        "AlertMessagePassWord": "Lösenordet måste vara minst 5 tecken långt",
+        "GeneralError": "Något gick fel... \n Försök igen senare",
         "Cancel": "Annulera",
         "OK": "OK"
     },
@@ -46,7 +62,13 @@
         "Search": "Sök",
         "LatestReviews": "Senaste recensioner",
         "MyProfile": "Min Profil",
-        "Settings": "Inställningar"
+        "Settings": "Inställningar",
+        "mostRated": "Högsta betyg",
+        "listenToMusic": "Mediaspelare",
+        "AlertTitle": "Fel",
+        "AlertMessage": "Den här funktionen är inte tillgänglig än \n Håll dig uppdaterad",
+        "Cancel": "Annulera",
+        "OK": "OK"
     },
     "search": {
         "Search artists or albums": "Sök artister eller album",
@@ -58,5 +80,54 @@
     "makereview": {
         "Submit": "Lämna",
         "WriteYourReview": "Skriv din recension"
+    },
+    "settings": {
+        "AccountSettings": "Kontoinställningar",
+        "LanguageSettings": "Språkinställningar",
+        "ThemeSettings": "Temainställningar",
+        "PrivacyAndSafetySettings" : "Integritets- och säkerhetsinställningar",
+        "NotificationsSettings": "Meddelandeinställningar",
+        "Support": "Stöd",
+        "AdminSettings": "Administratörsinställningar",
+        "Info": "Info",
+        "LoginLogout": "Logga in eller logga ut"
+    },
+    "AccountSettings": {
+        "Password": "Ändra lösenord",
+        "ReviewsThatUHaveLiked": "Recensioner som du gillade",
+        "SearchHistory": "Sökhistorik",
+        "DataUsage": "Mobil datanvändning",
+        "RemoveAccount": "Ta bort ditt konto"
+    },
+    "themeSettings": {
+        "Light": "Lätt tema",
+        "Dark": "Mörkt tema"
+    },
+    "PAS": {
+        "Privacy": "Kontos integritet",
+        "BlockedAccounts": "Blockerade konton",
+        "LinkedAccounts": "Länkade konton",
+        "AccountInformation": "Kontoinformation",
+        "PrivacyAndSecurityInfo": "Sekretess och säkerhetsinformation"
+    },
+    "Notifications": {
+        "PushNotifications": "Pushmeddelanden",
+        "EmailAndSMSNotifications": "E-post och SMS-meddelanden",
+        "BuyImmunity": "Köp immunitet från anmälningar"
+    },
+    "support": {
+        "GuideAndSupportCenter": "Guide och supportcenter",
+        "ReportAProblem": "Rapportera ett problem"
+    },
+    "info": {
+        "appUpdates": "Applikationsuppdateringar",
+        "Advertisements": "Annonser",
+        "PrivacyPolicy": "Integritetspolicy",
+        "TermsOfService": "Användarvillkor",
+        "OpenSourceLibraries": "Opensource-bibliotek"
+    },
+    "LoginLogout": {
+        "Logout": "Logga ut",
+        "AddAccount": "Lägg till konto"
     }
 }

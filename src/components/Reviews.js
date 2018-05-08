@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginTop: 10,
     marginBottom: 20,
-    backgroundColor: "#242628",
+    backgroundColor: "#222222",
     maxHeight: 200,
     justifyContent: "space-around"
   },

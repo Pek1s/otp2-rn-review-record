@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Dimensions
 } from "react-native";
+import I18n from '../utils/i18n';
 import { Actions } from "react-native-router-flux";
 
 export default class ControlPanelTabs extends React.Component {
@@ -15,10 +16,10 @@ export default class ControlPanelTabs extends React.Component {
       <View style={styles.tabsContainer}>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.profile()}
+          onPress={() => Actions.accountSettings()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Account Settings </Text>
+            <Text style={styles.generalText}>{I18n.t('settings.AccountSettings')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -26,63 +27,63 @@ export default class ControlPanelTabs extends React.Component {
           onPress={() => Actions.language()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> System Settings</Text>
+            <Text style={styles.generalText}>{I18n.t('settings.LanguageSettings')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.login()}
+          onPress={() => Actions.themeSettings()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Admin Settings </Text>
+            <Text style={styles.generalText}>{I18n.t('settings.ThemeSettings')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.userreview()}
+          onPress={() => Actions.pasSettings()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> User reviews</Text>
+            <Text style={styles.generalText}>{I18n.t('settings.PrivacyAndSafetySettings')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.controlpanel()}
+          onPress={() => Actions.NotificationSettings()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Some Other Settings </Text>
+            <Text style={styles.generalText}>{I18n.t('settings.NotificationsSettings')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.controlpanel()}
+          onPress={() => Actions.support()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Some Other Settings </Text>
+            <Text style={styles.generalText}>{I18n.t('settings.Support')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.controlpanel()}
+          onPress={() => Actions.adminpanel()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Some Other Settings </Text>
+            <Text style={styles.generalText}>{I18n.t('settings.AdminSettings')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.controlpanel()}
+          onPress={() => Actions.info()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Some Other Settings </Text>
+            <Text style={styles.generalText}>{I18n.t('settings.Info')}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabsItem}
-          onPress={() => Actions.controlpanel()}
+          onPress={() => Actions.LoginLogout()}
         >
           <View style={styles.tabsInnerItem}>
-            <Text style={styles.generalText}> Some Other Settings </Text>
+            <Text style={styles.generalText}>{I18n.t('settings.LoginLogout')}</Text>
           </View>
         </TouchableOpacity>
       </View>

@@ -25,5 +25,6 @@ export default class SearchResult extends React.Component {
 const styles = StyleSheet.create({
   bottomWrapper: {
     flex: 1,
+    backgroundColor: '#222222',
   }
 });
